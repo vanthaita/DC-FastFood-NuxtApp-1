@@ -3,8 +3,8 @@
     <div class="container mx-auto px-4">
       <div class="flex flex-wrap justify-between">
         <div class="w-full md:w-1/3 mb-6 md:mb-0">
-          <h2 class="text-2xl font-bold mb-4">KFC</h2>
-          <p class="text-gray-400">Drunken Claim</p>
+          <h2 class="text-2xl font-bold mb-4">DC</h2>
+          <p class="text-gray-400">Drunken Clam</p>
         </div>
         <div class="w-full md:w-1/3 mb-6 md:mb-0">
           <h3 class="text-xl font-bold mb-4">Quick Links</h3>
@@ -34,7 +34,7 @@
         </div>
       </div>
       <div class="mt-8 text-center text-gray-400">
-        <p>&copy; 2023 KFC. All rights reserved.</p>
+        <p>&copy; 2023 Drunken Clam. Let's drunk 🥴. Power by TLee</p>
       </div>
     </div>
   </footer>

@@ -1,9 +1,8 @@
 <template>
   <div class="min-h-screen flex flex-col">
-    <header class="bg-red-600 text-white p-4">
-      <h1 class="text-3xl font-bold">KFC</h1>
-    </header>
+    <Header />
     <Banner />
+    <ScrollableMenu :menuItems="combodata" />
     <main class="flex-grow">
       <section class="hero bg-cover bg-center h-96 flex items-center justify-center" style="background-image: url('path-to-your-hero-image.jpg');">
         <div class="text-center text-white">
@@ -33,12 +32,16 @@
 import ProductCard from '@/components/ProductCard.vue';
 import Footer from '~/components/Footer.vue';
 import Banner from '~/components/banner.vue';
+import ScrollableMenu from '~/components/scrollableMenu.vue';
+import header from '~/components/header.vue';
 export default {
   name: 'HomePage',
   components: {
     ProductCard,
     Footer,
     Banner,
+    ScrollableMenu,
+    header,
   },
   data() {
     return {
@@ -48,6 +51,14 @@ export default {
         { id: 3, name: 'Fries', description: 'Crispy golden fries.', price: '$3', imageSrc: 'https://res.cloudinary.com/dbonwxmgl/image/upload/v1730769577/t6gmzeaj4v2tbpkkss4m.png' },
         { id: 4, name: 'Fries Chicken', description: 'Crispy golden fries.', price: '$3', imageSrc: 'https://res.cloudinary.com/dbonwxmgl/image/upload/v1730769577/t6gmzeaj4v2tbpkkss4m.png' },
       ],
+      combodata: [
+  { id: 1, name: 'Hot Deals', isActive: false },
+  { id: 2, name: 'New Products', isActive: false },
+  { id: 3, name: 'Combo for 1', isActive: false },
+  { id: 4, name: 'Combo for Sharing', isActive: false },
+  { id: 5, name: 'Fried & Roasted', isActive: false },
+  { id: 6, name: 'Rice - Burger - Pasta', isActive: false },
+],
     };
   },
 };
