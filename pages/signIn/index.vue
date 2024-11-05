@@ -1,8 +1,6 @@
 <template>
+   <Header />
   <div class="min-h-screen flex flex-col items-center justify-center bg-gray-100">
-    <header class="bg-red-600 text-white w-full p-4 text-center">
-      <h1 class="text-3xl font-bold">KFC Sign In</h1>
-    </header>
     <main class="flex-grow flex items-center justify-center w-5/6">
       <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
         <h2 class="text-2xl font-bold mb-6 text-center">Sign In to Your Account</h2>
@@ -25,12 +23,13 @@
 </template>
 
 <script>
-import { routeLocationKey } from 'vue-router';
+import Header from '~/components/header.vue';
 import Footer from '~/components/Footer.vue';
 export default {
   name: 'SignIn',
   components: {
     Footer,
+    Header,
   },
   data() {
     return {

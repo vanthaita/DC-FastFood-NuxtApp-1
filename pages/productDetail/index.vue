@@ -1,4 +1,5 @@
 <template>
+  <Header />
   <ProductDetail
     name="Chicken Bucket"
     description="A bucket of our famous fried chicken."
@@ -6,15 +7,19 @@
     imageSrc="https://res.cloudinary.com/dbonwxmgl/image/upload/v1730756482/gqvh79lkxfomf90nmysi.png"
     additionalDetails="Includes 10 pieces of chicken, 2 large sides, and 4 biscuits."
   />
+  <Footer />
 </template>
 
 <script>
 import ProductDetail from '@/components/ProductDetail.vue';
-
+import Footer from '~/components/Footer.vue';
+import header from '~/components/header.vue';
 export default {
   name: 'ProductDetailPage',
   components: {
     ProductDetail,
+    Footer,
+    header,
   },
 };
 </script>
