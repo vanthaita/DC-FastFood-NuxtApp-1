@@ -3,6 +3,7 @@
     <header class="bg-red-600 text-white p-4">
       <h1 class="text-3xl font-bold">KFC</h1>
     </header>
+    <Banner />
     <main class="flex-grow">
       <section class="hero bg-cover bg-center h-96 flex items-center justify-center" style="background-image: url('path-to-your-hero-image.jpg');">
         <div class="text-center text-white">
@@ -31,11 +32,13 @@
 <script>
 import ProductCard from '@/components/ProductCard.vue';
 import Footer from '~/components/Footer.vue';
+import Banner from '~/components/banner.vue';
 export default {
   name: 'HomePage',
   components: {
     ProductCard,
     Footer,
+    Banner,
   },
   data() {
     return {

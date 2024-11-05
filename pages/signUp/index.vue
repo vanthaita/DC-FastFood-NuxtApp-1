@@ -3,7 +3,7 @@
     <header class="bg-red-600 text-white w-full p-4 text-center">
       <h1 class="text-3xl font-bold">KFC Sign Up</h1>
     </header>
-    <main class="flex-grow flex items-center justify-center w-auto">
+    <main class="flex-grow flex items-center justify-center w-5/6">
       <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
         <h2 class="text-2xl font-bold mb-6 text-center">Create Your Account</h2>
         <form @submit.prevent="handleSubmit">
@@ -28,13 +28,17 @@
       <p>&copy; 2023 KFC. All rights reserved.</p>
     </footer>
   </div>
+    <Footer />
 </template>
 
 <script>
-import { routes } from 'vue-router/auto-routes';
+import Footer from '~/components/Footer.vue';
 
 export default {
   name: 'SignUp',
+  components: {
+    Footer,
+  },
   data() {
     return {
       name: '',
