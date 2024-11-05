@@ -1,5 +1,5 @@
 <template>
-  <div class="flex items-center justify-center h-screen bg-gradient-to-b from-gray-100 via-white to-gray-200">
+  <!-- <div class="flex items-center justify-center h-screen bg-gradient-to-b from-gray-100 via-white to-gray-200">
     <div class="max-w-4xl p-8 bg-white rounded-lg shadow-lg text-gray-800 text-center">
       <div class="flex items-center justify-center font-extrabold text-5xl mb-6">
         <Icon name="mdi-hand-wave" size="64" class="mr-4 text-blue-500 animate-wave" />
@@ -23,6 +23,11 @@
         </ul>
       </div>
     </div>
+  </div> -->
+  <div>
+     <NuxtLayout>
+       <NuxtPage/>
+     </NuxtLayout>
   </div>
 </template>
 <style scoped>
