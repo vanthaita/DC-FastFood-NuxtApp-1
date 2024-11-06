@@ -1,6 +1,6 @@
 <template>
   <div class="bg-white p-4 shadow rounded">
-    <img :src="imageSrc" alt="Product image" class="w-full h-auto object-fill rounded-t">
+    <img :src="imageSrc" alt="Product image" class="w-96 h-auto object-fill rounded-t">
     <div class="p-4">
       <h3 class="text-xl font-bold">{{ name }}</h3>
       <p class="mt-2">{{ description }}</p>
