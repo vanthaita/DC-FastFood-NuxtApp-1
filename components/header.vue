@@ -55,40 +55,23 @@
               class="h-6 w-6"
             />
             <span
-              class="absolute top-0 right-0 bg-white text-red-600 rounded-full text-xs w-4 h-4 flex items-center justify-center"
+              class="absolute top-0 right-0 bg-white text-red-600 rounded-full text-xs w-3 h-3 flex items-center justify-center"
             >
               3
             </span>
           </nuxt-link>
-  
-          <!-- Sidebar Toggle for Mobile -->
-          <button
-            @click="toggleDropdown('sidebarOpen')"
-            class="lg:hidden hover:text-gray-200"
-            aria-label="Toggle Sidebar"
-          >
-            <svg
-              class="h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            </svg>
-          </button>
+          <sideBar />
         </div>
       </div>
     </header>
   </template>
   
   <script>
+  import sideBar from './sideBar.vue';
   export default {
+    components: {
+      sideBar,
+    },
     data() {
       return {
         sidebarOpen: false,
