@@ -1,7 +1,6 @@
 <template>
     <header class="bg-red-600 text-white py-4">
       <div class="container mx-auto flex items-center justify-between">
-        <!-- Logo and Navigation -->
         <div class="flex items-center space-x-4">
           <img
             src="https://res.cloudinary.com/dbonwxmgl/image/upload/v1730811513/a3dlu88uiel0pogi3sdz.png"
@@ -11,14 +10,11 @@
           <nav class="hidden lg:flex space-x-6">
             <nuxt-link to="/" class="hover:text-gray-200">Homepage</nuxt-link>
             <nuxt-link to="/deals" class="hover:text-gray-200">Deals</nuxt-link>
-            <nuxt-link to="/book-party" class="hover:text-gray-200">Book a Party</nuxt-link>
-            <nuxt-link to="/find-kfc" class="hover:text-gray-200">Find a KFC</nuxt-link>
+            <nuxt-link to="/booking" class="hover:text-gray-200">Book a Party</nuxt-link>
+            <nuxt-link to="/findkfc" class="hover:text-gray-200">Find a KFC</nuxt-link>
           </nav>
         </div>
-  
-        <!-- Language, Profile, Cart, and Sidebar Toggle -->
         <div class="flex items-center space-x-4">
-          <!-- Language Switch Toggle -->
           <div class="relative">
             <div
               @click="toggleLanguage"
@@ -37,8 +33,6 @@
               </div>
             </div>
           </div>
-  
-          <!-- Profile Icon -->
           <nuxt-link to="/profile" class="hover:text-gray-200" aria-label="Profile">
             <img
               src="https://res.cloudinary.com/dbonwxmgl/image/upload/v1730812166/pgvlfot3advrc9kheorc.png"
@@ -46,8 +40,6 @@
               class="h-6 w-6"
             />
           </nuxt-link>
-  
-          <!-- Cart Icon -->
           <nuxt-link to="/cart" class="hover:text-gray-200 relative" aria-label="Cart">
             <img
               src="https://res.cloudinary.com/dbonwxmgl/image/upload/v1730812260/z6rutifjregmcrcjuecx.png"
