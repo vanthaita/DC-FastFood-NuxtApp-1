@@ -5,7 +5,7 @@
       <div class="w-full mx-auto bg-white p-6 shadow-lg rounded-lg">
         <div class="flex flex-col md:flex-row gap-6">
           <!-- Product Image -->
-          <img :src="imageSrc" alt="Product image" class="w-3/5 md:w-1/2 h-auto object-cover rounded-lg border border-gray-300">
+          <img :src="imageSrc" alt="Product image" class="w-96 h-auto object-cover rounded-lg border border-gray-300">
 
           <!-- Product Info -->
           <div class="p-4 flex-1">
@@ -19,7 +19,7 @@
               <input v-model.number="quantity" type="number" id="quantity" min="1" class="border p-2 rounded w-16 text-center" />
 
               <label for="delivery" class="block text-lg font-semibold mt-4">Delivery Option</label>
-              <select v-model="selectedDelivery" id="delivery" class="border p-2 rounded w-full">
+              <select v-model="selectedDelivery" id="delivery" class="border p-2 rounded w-3/5">
                 <option v-for="option in deliveryOptions" :key="option.id" :value="option">
                   {{ option.name }} - ${{ option.cost.toFixed(2) }}
                 </option>
@@ -82,10 +82,10 @@
           { id: 2, name: 'Express', cost: 10.00 },
         ],
         menuItems: [
-          { id: 1, name: 'Chicken Bucket', description: 'A bucket of our famous fried chicken.', price: '$20', imageSrc: 'https://res.cloudinary.com/dbonwxmgl/image/upload/v1730769577/t6gmzeaj4v2tbpkkss4m.png' },
-          { id: 2, name: 'Chicken Sandwich', description: 'A delicious chicken sandwich.', price: '$5', imageSrc: 'https://res.cloudinary.com/dbonwxmgl/image/upload/v1730769577/t6gmzeaj4v2tbpkkss4m.png' },
-          { id: 3, name: 'Fries', description: 'Crispy golden fries.', price: '$3', imageSrc: 'https://res.cloudinary.com/dbonwxmgl/image/upload/v1730769577/t6gmzeaj4v2tbpkkss4m.png' },
-          { id: 4, name: 'Fried Chicken', description: 'Delicious fried chicken.', price: '$15', imageSrc: 'https://res.cloudinary.com/dbonwxmgl/image/upload/v1730769577/t6gmzeaj4v2tbpkkss4m.png' },
+          { id: 1, name: 'Chicken Bucket', description: 'A bucket of our famous fried chicken.', price: '$20', imageSrc: 'https://via.placeholder.com/150' },
+          { id: 2, name: 'Chicken Sandwich', description: 'A delicious chicken sandwich.', price: '$5', imageSrc: 'https://via.placeholder.com/150' },
+          { id: 3, name: 'Fries', description: 'Crispy golden fries.', price: '$3', imageSrc: 'https://via.placeholder.com/150' },
+          { id: 4, name: 'Fried Chicken', description: 'Delicious fried chicken.', price: '$15', imageSrc: 'https://via.placeholder.com/150' },
         ],
         selectedDelivery: { id: 1, name: 'Standard', cost: 5.00 }
       };
