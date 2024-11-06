@@ -1,13 +1,10 @@
 <template>
     <div>
-      <!-- Sidebar Background Overlay -->
       <div 
         class="fixed inset-0 bg-black bg-opacity-50 z-40"
         v-if="isOpen"
         @click="toggleSidebar"
       ></div>
-  
-      <!-- Sidebar -->
       <div 
         class="fixed top-0 left-0 w-96 h-full bg-white z-50 transform transition-transform duration-300 ease-in-out"
         :class="isOpen ? 'translate-x-0' : '-translate-x-full'"
@@ -23,8 +20,6 @@
           </li>
         </ul>
       </div>
-  
-      <!-- Button to Open Sidebar -->
       <button
         class="fixed top-4 right-4 bg-red-600 text-white px-4 py-2 rounded z-50"
         @click="toggleSidebar"
