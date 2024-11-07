@@ -1,9 +1,8 @@
 <template>
     <div class="relative w-full h-96 overflow-hidden">
         <div class="flex w-full h-full transition-transform duration-1000 ease-in-out" :style="{ transform: `translateX(-${activeIndex * 100}%)` }">
-            <!-- Image 1 -->
             <div class="w-full flex-shrink-0">
-                <div class="bg-cover bg-center h-full w-full" style="background-image: url('https://res.cloudinary.com/dbonwxmgl/image/upload/v1717149359/dviujkz987rc1qksfia7.jpg')">
+                <div class="bg-cover bg-center h-full w-full" style="background-image: url('https://res.cloudinary.com/dbonwxmgl/image/upload/v1730964706/xqbbmm5jfpznvb6ytxi0.png')">
                     <div class="flex items-center justify-center h-full bg-black bg-opacity-50">
                         <div class="text-center text-white">
                             <h1 class="text-4xl font-bold mb-4">Welcome to Our Website</h1>
@@ -13,9 +12,8 @@
                     </div>
                 </div>
             </div>
-            <!-- Image 2 -->
             <div class="w-full flex-shrink-0">
-                <div class="bg-cover bg-center h-full w-full" style="background-image: url('https://res.cloudinary.com/dbonwxmgl/image/upload/v1717149359/fdj0rhqyzsmbighymugv.jpg')">
+                <div class="bg-cover bg-center h-full w-full" style="background-image: url('https://res.cloudinary.com/dbonwxmgl/image/upload/v1730964741/fnxuwq8gnq72uemp88sn.png')">
                     <div class="flex items-center justify-center h-full bg-black bg-opacity-50">
                         <div class="text-center text-white">
                             <h1 class="text-4xl font-bold mb-4">Exclusive Offers</h1>
@@ -25,9 +23,8 @@
                     </div>
                 </div>
             </div>
-            <!-- Image 3 -->
             <div class="w-full flex-shrink-0">
-                <div class="bg-cover bg-center h-full w-full" style="background-image: url('https://res.cloudinary.com/dbonwxmgl/image/upload/v1717149206/zg7xdllfa7c7ep09687v.jpg')">
+                <div class="bg-cover bg-center h-full w-full" style="background-image: url('https://res.cloudinary.com/dbonwxmgl/image/upload/v1730964773/ukcwkgp9b7cftdajldm0.png')">
                     <div class="flex items-center justify-center h-full bg-black bg-opacity-50">
                         <div class="text-center text-white">
                             <h1 class="text-4xl font-bold mb-4">Join Our Community</h1>
@@ -38,7 +35,6 @@
                 </div>
             </div>
         </div>
-        <!-- Navigation Dots -->
         <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
             <button v-for="(slide, index) in totalSlides" :key="index" @click="goToSlide(index)" :class="{'bg-white': activeIndex === index, 'bg-gray-400': activeIndex !== index}" class="w-3 h-3 rounded-full"></button>
         </div>
@@ -64,7 +60,7 @@ export default {
         startAutoSlide() {
             this.autoSlide = setInterval(() => {
                 this.nextSlide();
-            }, 3000); // Increased interval for better readability
+            }, 3000); 
         },
         nextSlide() {
             this.activeIndex = (this.activeIndex + 1) % this.totalSlides;

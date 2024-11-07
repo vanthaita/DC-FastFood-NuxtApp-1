@@ -6,13 +6,18 @@
         :key="item.id"
         class="text-center font-bold text-lg uppercase tracking-wider flex-shrink-0"
       >
-        <a href="#" :class="{'text-black': item.isActive, 'text-gray-400': !item.isActive, 'hover:text-red-500': !item.isActive}">
+        <a
+          href="#"
+          :class="{'text-black': item.isActive, 'text-gray-400': !item.isActive, 'hover:text-red-500': !item.isActive}"
+          @click.prevent="handleClick(item.data)"
+        >
           {{ item.name }}
         </a>
       </div>
     </div>
   </div>
 </template>
+
 <script>
 export default {
   name: 'ScrollableMenu',
@@ -20,6 +25,11 @@ export default {
     menuItems: {
       type: Array,
       required: true,
+    },
+  },
+  methods: {
+    handleClick(sectionId) {
+      this.$emit('scrollToSection', sectionId);
     },
   },
 };

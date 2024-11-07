@@ -1,8 +1,12 @@
 <template>
-  <Header />
-  <div class="min-h-screen flex flex-col items-center justify-center bg-gray-100">
-    <main class="flex-grow flex items-center justify-center w-5/6">
-      <div class="bg-white p-8 rounded shadow-md w-full max-w-md">
+  <div class="min-h-screen flex flex-col">
+    <Header />
+  <div class="flex flex-col items-center justify-center flex-grow bg-gray-100">
+    <main class="flex items-center justify-between w-full max-w-4xl gap-4 p-6 rounded-lg shadow-lg">
+      <div class="w-1/2 flex justify-center items-center">
+          <img src="/assets/img/girl.png" alt="poster" class="w-full h-auto rounded-lg">
+        </div>
+      <div class="bg-white p-10 rounded shadow-md w-1/2">
         <h2 class="text-2xl font-bold mb-6 text-center">Create Your Account</h2>
         <form @submit.prevent="handleSubmit">
           <div class="mb-4">
@@ -22,11 +26,9 @@
         <p class="mt-4 text-center text-gray-600">Already have an account? <a href="/signIn" class="text-red-600 hover:underline">Sign In</a></p>
       </div>
     </main>
-    <footer class="bg-gray-800 text-white w-full p-4 text-center">
-      <p>&copy; 2023 KFC. All rights reserved.</p>
-    </footer>
   </div>
-    <Footer />
+  <Footer />
+  </div>
 </template>
 
 <script>
