@@ -7,7 +7,7 @@
                         <div class="text-center text-white">
                             <h1 class="text-4xl font-bold mb-4">Welcome to Our Website</h1>
                             <p class="text-lg mb-6">Discover amazing products just for you.</p>
-                            <nuxt-link to="/products" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">Shop Now</nuxt-link>
+                            <nuxt-link to="/findkfc" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">Shop Now</nuxt-link>
                         </div>
                     </div>
                 </div>
@@ -18,7 +18,7 @@
                         <div class="text-center text-white">
                             <h1 class="text-4xl font-bold mb-4">Exclusive Offers</h1>
                             <p class="text-lg mb-6">Get the best deals and discounts today.</p>
-                            <nuxt-link to="/offers" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">Explore Offers</nuxt-link>
+                            <nuxt-link to="/booking" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">Explore Offers</nuxt-link>
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@
                         <div class="text-center text-white">
                             <h1 class="text-4xl font-bold mb-4">Join Our Community</h1>
                             <p class="text-lg mb-6">Sign up and be a part of our growing community.</p>
-                            <nuxt-link to="/signup" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">Join Now</nuxt-link>
+                            <nuxt-link to="/signIn" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">Join Now</nuxt-link>
                         </div>
                     </div>
                 </div>

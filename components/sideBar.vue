@@ -35,11 +35,11 @@
       return {
         isOpen: false,
         navdata: [
-          { name: 'Chicken', link: '/chicken' },
-          { name: 'Burgers', link: '/burgers' },
-          { name: 'Drinks', link: '/drinks' },
-          { name: 'Sides', link: '/sides' },
-          { name: 'Desserts', link: '/desserts' }
+          { name: 'Home', link: '/' },
+          { name: 'Booking a party', link: '/booking' },
+          { name: 'Find DC store', link: '/findkfc' },
+          { name: 'Your Profile', link: '/profile' },
+          { name: 'Log In', link: '/signIn' }
         ]
       };
     },
