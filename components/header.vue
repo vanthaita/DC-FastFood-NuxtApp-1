@@ -7,11 +7,10 @@
             alt="KFC Logo"
             class="h-12"
           />
-          <nav class="hidden lg:flex space-x-6">
+          <nav class="hidden lg:flex text-xl space-x-6">
             <nuxt-link to="/" class="hover:text-gray-200">Homepage</nuxt-link>
-            <nuxt-link to="/deals" class="hover:text-gray-200">Deals</nuxt-link>
             <nuxt-link to="/booking" class="hover:text-gray-200">Book a Party</nuxt-link>
-            <nuxt-link to="/findkfc" class="hover:text-gray-200">Find a KFC</nuxt-link>
+            <nuxt-link to="/findkfc" class="hover:text-gray-200">Find a DC</nuxt-link>
           </nav>
         </div>
         <div class="flex items-center space-x-4">

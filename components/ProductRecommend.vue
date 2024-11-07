@@ -6,7 +6,7 @@
           <img :src="product.image" alt="product image" class="w-full h-48 object-cover rounded mb-4" />
           <h3 class="text-lg font-bold text-gray-700">{{ product.name }}</h3>
           <p class="text-gray-500">${{ product.price.toFixed(2) }}</p>
-          <button class="bg-blue-600 text-white px-4 py-2 mt-4 rounded hover:bg-blue-700">Add to Cart</button>
+          <button class="bg-red-600 text-white px-4 py-2 mt-4 rounded hover:bg-blue-700">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -27,7 +27,6 @@
     },
     methods: {
       addToCart(product) {
-        // Add the product to the cart logic here
       },
     },
   };
