@@ -6,9 +6,20 @@
       <p class="mt-2">{{ description }}</p>
       <p class="mt-2 font-bold">{{ price }}</p>
     </div>
-    <nuxt-link to="/productDetail" class="mt-4 bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">
-  Buy
-</nuxt-link>
+    <nuxt-link
+      :to="{
+        path: '/productDetail',
+        query: {
+          name: name,
+          description: description,
+          price: price,
+          imageSrc: imageSrc,
+        },
+      }"
+      class="mt-4 bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"
+    >
+      Buy
+    </nuxt-link>
   </div>
 </template>
 
