@@ -4,7 +4,7 @@
     <div class="flex flex-col items-center justify-center flex-grow bg-gray-100">
       <main class=" flex items-center justify-between w-full max-w-4xl gap-4 p-6 rounded-lg shadow-lg">
         <div class="w-1/2 flex justify-center items-center">
-          <img src="/assets/img/Screenshot 2024-11-07 092426.png" alt="poster" class="w-full h-auto rounded-lg">
+          <img src="/assets/img/we.png" alt="poster" class="w-full h-auto rounded-lg">
         </div>
         <div class="bg-white p-10 rounded shadow-md w-1/2">
           <h2 class="text-2xl font-bold mb-6 text-center">Sign In to Your Account</h2>
