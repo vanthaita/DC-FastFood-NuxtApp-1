@@ -6,11 +6,11 @@
         @click="toggleSidebar"
       ></div>
       <div 
-        class="fixed top-0 left-0 w-96 h-full bg-white z-50 transform transition-transform duration-300 ease-in-out"
+        class="fixed top-0 left-0 w-2/6 h-full bg-white z-50 transform transition-transform duration-300 ease-in-out"
         :class="isOpen ? 'translate-x-0' : '-translate-x-full'"
       >
         <div class="p-4 flex justify-between items-center bg-red-600 text-white">
-          <h3 class="text-lg font-bold">KFC Menu</h3>
+          <h3 class="text-lg font-bold">DC Menu</h3>
           <button @click="toggleSidebar" class="text-2xl">&times;</button>
         </div>
   
@@ -21,7 +21,7 @@
         </ul>
       </div>
       <button
-        class="fixed top-4 right-4 bg-red-600 text-white px-4 py-2 rounded z-50"
+        class="fixed top-4 right-4 bg-red-600 text-white text-xl px-4 py-2 rounded z-50"
         @click="toggleSidebar"
       >
         ☰ Menu

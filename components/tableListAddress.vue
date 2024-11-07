@@ -1,6 +1,6 @@
 <template>
     <div class="bg-white p-6 shadow-lg rounded-lg mt-6">
-      <h3 class="text-xl font-bold text-center mb-4 text-red-600">KFC Locations in HCM</h3>
+      <h3 class="text-xl font-bold text-center mb-4 text-red-600">DC Locations in HCM</h3>
       <ul>
         <li
           v-for="(location, index) in kfcLocations"
