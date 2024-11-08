@@ -1,10 +1,10 @@
 <template>
-  <div class="bg-white p-4 shadow rounded">
+  <div class="bg-white p-2 shadow rounded ">
     <img :src="imageSrc" alt="Product image" class="w-96 h-3/4 object-fill rounded-t">
-    <div class="p-4">
+    <div class="p-2">
       <h3 class="text-xl font-bold">{{ name }}</h3>
-      <p class="mt-2">{{ description }}</p>
-      <p class="mt-2 font-bold">{{ price }}</p>
+      <p class="text-lg mt-2">{{ description }}</p>
+      <p class="text-2xl mt-2 font-bold">{{ price }}</p>
     </div>
     <nuxt-link
       :to="{
@@ -16,7 +16,7 @@
           imageSrc: imageSrc,
         },
       }"
-      class="mt-4 bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"
+      class="mt-4 bg-red-500 text-white py-2 px-4 rounded font-medium hover:bg-red-600"
     >
       Buy
     </nuxt-link>
