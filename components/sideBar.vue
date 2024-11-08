@@ -15,9 +15,8 @@
       </div>
 
       <ul class="mt-4">
-        <li v-for="item in navdata" :key="item.name" class="p-4 border-b flex items-center space-x-2">
-          <i :class="item.icon"></i>
-          <NuxtLink :to="item.link" class="hover:text-red-600 text-gray-700">{{ item.name }}</NuxtLink>
+        <li v-for="item in navdata" :key="item.name" class="p-4 border-b flex items-center space-x-2 hover:bg-gray-100">
+          <NuxtLink :to="item.link" class="text-gray-700"><i :class="item.icon"></i> {{ item.name }}</NuxtLink>
         </li>
       </ul>
     </div>
@@ -39,7 +38,7 @@ export default {
         { name: 'Home', link: '/', icon: 'fas fa-home fa-2x' },
         { name: 'Booking a party', link: '/booking', icon: 'fas fa-calendar-alt fa-2x' },
         { name: 'Find DC store', link: '/findkfc', icon: 'fas fa-map-marker-alt fa-2x' },
-        { name: 'Your Profile', link: '/profile', icon: 'fas fa-user fa-2x' },
+        { name: 'Your Profile', link: '/profile/detail', icon: 'fas fa-user fa-2x' },
         { name: 'Log In', link: '/signIn', icon: 'fas fa-sign-in-alt fa-2x' },
       ],
     };

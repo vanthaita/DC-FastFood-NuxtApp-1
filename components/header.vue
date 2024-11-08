@@ -19,20 +19,20 @@
               @click="toggleLanguage"
               role="switch"
               :aria-checked="selectedLanguage === 'VN'"
-              class="w-16 h-8 bg-white rounded-full flex items-center cursor-pointer relative transition-all duration-300"
+              class="w-16 h-8 bg-red-500 rounded-full flex items-center cursor-pointer relative transition-all duration-300"
               :class="{'bg-green-500': selectedLanguage === 'VN'}"
             >
               <div
-                class="w-8 h-8 bg-gray-600 rounded-full shadow-md transition-transform duration-300 transform"
+                class="w-8 h-8 bg-green-600 rounded-full shadow-md transition-transform duration-300 transform"
                 :class="{'translate-x-full': selectedLanguage === 'VN'}"
               ></div>
-              <div class="absolute inset-0 flex justify-between px-2 text-xs font-bold">
+              <div class="absolute inset-0 flex justify-between px-2 text-xs py-2 font-bold">
                 <span :class="{'text-white': selectedLanguage === 'VN'}">EN</span>
                 <span :class="{'text-white': selectedLanguage === 'EN'}">VN</span>
               </div>
             </div>
           </div>
-          <nuxt-link to="/profile" class="hover:text-gray-200" aria-label="Profile">
+          <nuxt-link to="/profile/detail" class="hover:text-gray-200" aria-label="Profile">
             <img
               src="https://res.cloudinary.com/dbonwxmgl/image/upload/v1730812166/pgvlfot3advrc9kheorc.png"
               alt="Profile"

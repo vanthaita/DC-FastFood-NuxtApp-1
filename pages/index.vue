@@ -51,10 +51,10 @@ export default {
           name: 'Hot Deals',
           data: 'hotdeals',
           products: [
-            { id: 1, name: 'Chicken Bucket', description: 'A bucket of our famous fried chicken.', price: '$20', imageSrc: 'https://via.placeholder.com/150' },
-            { id: 2, name: 'Chicken Sandwich', description: 'A delicious chicken sandwich.', price: '$5', imageSrc: 'https://via.placeholder.com/150' },
-             { id: 3, name: 'Grilled Chicken', description: 'Tender grilled chicken.', price: '$22', imageSrc: 'https://via.placeholder.com/150' },
-            { id: 4, name: 'Chicken Nuggets', description: 'Crispy chicken nuggets.', price: '$6', imageSrc: 'https://via.placeholder.com/150' },
+            { id: 1, name: 'Chicken Bucket', description: 'A bucket of our famous fried chicken.', price: '$20', imageSrc: 'https://res.cloudinary.com/dbonwxmgl/image/upload/v1731044437/l7xuyrqazfnkj4j0kmkk.png' },
+            { id: 2, name: 'Chicken Sandwich', description: 'A delicious chicken sandwich.', price: '$5', imageSrc: 'https://res.cloudinary.com/dbonwxmgl/image/upload/v1731044531/fbrttmcbp5rx0cqqabja.png' },
+             { id: 3, name: 'Grilled Chicken', description: 'Tender grilled chicken.', price: '$22', imageSrc: 'https://res.cloudinary.com/dbonwxmgl/image/upload/v1731044623/b98yjprdpdeuzrkp3gdd.png' },
+            { id: 4, name: 'Chicken Nuggets', description: 'Crispy chicken nuggets.', price: '$6', imageSrc: 'https://res.cloudinary.com/dbonwxmgl/image/upload/v1731044699/gvn1u2l5i6mw2lfofgev.png' },
             { id: 5, name: 'Chicken Wrap', description: 'A tasty chicken wrap.', price: '$8', imageSrc: 'https://via.placeholder.com/150' },
             { id: 6, name: 'Chicken Salad', description: 'Fresh chicken salad.', price: '$10', imageSrc: 'https://via.placeholder.com/150' }
           ],
