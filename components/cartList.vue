@@ -17,8 +17,8 @@
           </thead>
           <tbody>
             <tr v-for="item in cartItems" :key="item.id" class="border-t">
-              <td class="py-2">{{ item.name }}</td>
-              <td class="py-2">
+              <td class="py-2 px-28">{{ item.name }}</td>
+              <td class="py-2 px-28">
                 <input
                   type="number"
                   v-model.number="item.quantity"
@@ -27,9 +27,9 @@
                   @change="updateQuantity(item.id, item.quantity)"
                 />
               </td>
-              <td class="py-2">${{ item.price.toFixed(2) }}</td>
-              <td class="py-2">${{ calculateTotal(item).toFixed(2) }}</td>
-              <td class="py-2">
+              <td class="py-2 px-28">${{ item.price.toFixed(2) }}</td>
+              <td class="py-2 px-28">${{ calculateTotal(item).toFixed(2) }}</td>
+              <td class="py-2 px-28">
                 <button @click="confirmRemove(item.id)" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">
                   Remove
                 </button>
@@ -50,7 +50,7 @@
         <p class="text-lg">Your cart is empty.</p>
         <router-link to="/menu" class="text-blue-600 underline">Continue Shopping</router-link>
       </div>
-      <h2 class="text-xl font-semibold text-gray-800">Recommend your choice with:</h2>
+      <h2 class="text-2xl font-bold text-gray-600 ml-2">Recommend your choice with:</h2>
       <ProductRecommend />
     </main>
   </div>

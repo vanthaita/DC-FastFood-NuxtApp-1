@@ -9,19 +9,18 @@
       class="fixed top-0 left-0 w-2/6 h-full bg-white z-50 transform transition-transform duration-300 ease-in-out"
       :class="isOpen ? 'translate-x-0' : '-translate-x-full'"
     >
-      <div class="p-4 flex justify-between items-center bg-red-600 text-white">
-        <h3 class="text-lg font-bold">DC Menu</h3>
+      <div class="p-8 flex justify-between items-center bg-red-600 text-white">
         <button @click="toggleSidebar" class="text-2xl">&times;</button>
       </div>
 
       <ul class="mt-4">
         <li v-for="item in navdata" :key="item.name" class="p-4 border-b flex items-center space-x-2 hover:bg-gray-100">
-          <NuxtLink :to="item.link" class="text-gray-700"><i :class="item.icon"></i> {{ item.name }}</NuxtLink>
+          <NuxtLink :to="item.link" class="text-gray-700 p-2"><i :class="item.icon"></i>   {{ item.name }}</NuxtLink>
         </li>
       </ul>
     </div>
     <button
-      class="fixed top-4 right-4 bg-red-600 text-white text-xl px-4 py-2 rounded z-50"
+      class="fixed top-4 left-4 bg-red-600 font-bold text-white text-2xl px-4 py-4 rounded z-50"
       @click="toggleSidebar"
     >
       ☰ Menu

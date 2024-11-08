@@ -2,15 +2,16 @@
     <header class="bg-red-600 text-white py-4">
       <div class="container mx-auto flex items-center justify-between">
         <div class="flex items-center space-x-4">
+        <p class="text-4xl font-bold text-bisque mr-4">Drunken Clam</p>
           <img
             src="https://res.cloudinary.com/dbonwxmgl/image/upload/v1730811513/a3dlu88uiel0pogi3sdz.png"
             alt="KFC Logo"
-            class="h-12"
+            class="h-16"
           />
-          <nav class="hidden lg:flex text-xl space-x-6">
-            <nuxt-link to="/" class="hover:text-gray-200">Homepage</nuxt-link>
-            <nuxt-link to="/booking" class="hover:text-gray-200">Book a Party</nuxt-link>
-            <nuxt-link to="/findkfc" class="hover:text-gray-200">Find a DC</nuxt-link>
+          <nav class="hidden lg:flex text-gray-700 text-xl space-x-6">
+            <headerItem title="Home" link="/" :activeLink="currentPath" />
+            <headerItem title="Booking A Party" link="/booking" :activeLink="currentPath" />
+            <headerItem title="Find DC Store" link="/findkfc" :activeLink="currentPath" />
           </nav>
         </div>
         <div class="flex items-center space-x-4">
@@ -32,24 +33,24 @@
               </div>
             </div>
           </div>
-          <nuxt-link to="/profile/detail" class="hover:text-gray-200" aria-label="Profile">
-            <img
-              src="https://res.cloudinary.com/dbonwxmgl/image/upload/v1730812166/pgvlfot3advrc9kheorc.png"
-              alt="Profile"
-              class="h-6 w-6"
-            />
-          </nuxt-link>
           <nuxt-link to="/cart" class="hover:text-gray-200 relative" aria-label="Cart">
             <img
               src="https://res.cloudinary.com/dbonwxmgl/image/upload/v1730812260/z6rutifjregmcrcjuecx.png"
               alt="Cart"
-              class="h-6 w-6"
+              class="h-8 w-8"
             />
             <span
               class="absolute top-0 right-0 bg-white text-red-600 rounded-full text-xs w-3 h-3 flex items-center justify-center"
             >
               3
             </span>
+          </nuxt-link>
+          <nuxt-link to="/profile/detail" class="hover:text-gray-200" aria-label="Profile">
+            <img
+              src="https://res.cloudinary.com/dbonwxmgl/image/upload/v1730812166/pgvlfot3advrc9kheorc.png"
+              alt="Profile"
+              class="h-8 w-8"
+            />
           </nuxt-link>
           <sideBar />
         </div>
@@ -59,15 +60,22 @@
   
   <script>
   import sideBar from './sideBar.vue';
+  import headerItem from './headerItem.vue';
   export default {
     components: {
       sideBar,
+      headerItem,
     },
     data() {
       return {
         sidebarOpen: false,
         selectedLanguage: "EN",
       };
+    },
+    computed: {
+      currentPath() {
+        return this.$route.path;
+      }
     },
     methods: {
       toggleDropdown(dropdown) {

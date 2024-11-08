@@ -1,16 +1,17 @@
 <template>
-  <div class="min-h-screen w-full flex flex-col bg-gray-50">
+  <div class="min-h-screen w-full text-xl flex flex-col bg-gray-50">
     <main class="flex-grow p-8">
       <div class="w-full mx-auto bg-white p-6 shadow-lg rounded-lg">
         <div class="flex flex-col md:flex-row gap-6">
           <img :src="product.imageSrc" alt="Product image" class="w-96 h-auto object-cover rounded-lg border border-gray-300">
           <div class="p-4 flex-1">
             <h2 class="text-3xl font-bold text-gray-800">{{ product.name }}</h2>
-            <p class="mt-2 text-lg text-gray-600">{{ product.description }}</p>
-            <p class="mt-4 text-2xl font-bold text-red-600">Price: ${{ formattedPrice }}</p>
+            <p class="mt-4 text-1xl font-bold text-red-600">Price: ${{ formattedPrice }}</p>
             <div class="mt-4">
-              <label for="quantity" class="block text-lg font-semibold">Quantity</label>
-              <input v-model.number="quantity" type="number" id="quantity" min="1" class="border p-2 rounded w-16 text-center" />
+             <div class="flex flex-row">
+              <label for="quantity" class="block text-xl font-semibold mr-4">Quantity</label>
+              <input v-model.number="quantity" type="number" id="quantity" min="1" class="border  rounded w-16 text-center" />
+             </div>
               <label for="delivery" class="block text-lg font-semibold mt-4">Delivery Option</label>
               <select v-model="selectedDelivery" id="delivery" class="border p-2 rounded w-3/5">
                 <option v-for="option in deliveryOptions" :key="option.id" :value="option">
@@ -19,12 +20,12 @@
               </select>
             </div>
             <div class="mt-4">
-              <h3 class="text-xl font-bold text-gray-800">Total Bill: ${{ totalBill }}</h3>
+              <h3 class="text-xl font-bold text-red-600">Total Bill: ${{ totalBill }}</h3>
             </div>
-            <button @click="buyNow" class="mt-4 bg-red-600 text-white p-3 rounded-lg hover:bg-red-700 transition duration-300 transform hover:scale-105">Buy Now</button>
+            <button @click="buyNow" class="mt-4 bg-red-600 text-white p-3 font-medium rounded-lg hover:bg-red-700 transition duration-300 transform hover:scale-105">Buy Now</button>
             <div class="mt-6">
               <h3 class="text-xl font-bold text-gray-800">Additional Details</h3>
-              <p class="mt-2 text-gray-600">{{ additionalDetails }}</p>
+              <p class="mt-2 text-gray-600">{{ product.description }}</p>
             </div>
           </div>
         </div>

@@ -34,7 +34,7 @@
         </div>
       </div>
       <div class="mt-8 text-center text-gray-400">
-        <p>&copy; 2023 Drunken Clam. Let's drunk 🥴. Power by TLee</p>
+        <p>&copy; 2024 Drunken Clam. Let's drunk 🥴. Power by TLee</p>
       </div>
     </div>
   </footer>
