@@ -1,10 +1,10 @@
 <template>
-  <div class="bg-white p-2 shadow rounded ">
-    <img :src="imageSrc" alt="Product image" class="w-96 h-3/4 object-fill rounded-t">
-    <div class="p-2">
-      <h3 class="text-xl font-bold">{{ name }}</h3>
-      <p class="text-lg mt-2">{{ description }}</p>
-      <p class="text-2xl mt-2 font-bold">{{ price }}</p>
+  <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition hover:scale-105 duration-300 ease-in-out max-w-xs">
+    <img :src="imageSrc" alt="Product image" class="w-full h-64 object-cover" />
+    <div class="p-4">
+      <h3 class="text-xl font-semibold text-gray-800">{{ name }}</h3>
+      <p class="text-gray-600 mt-2">{{ description }}</p>
+      <p class="text-2xl font-bold text-gray-800 mt-4">{{ price }}</p>
     </div>
     <nuxt-link
       :to="{
@@ -16,33 +16,20 @@
           imageSrc: imageSrc,
         },
       }"
-      class="mt-4 bg-red-500 text-white py-2 px-4 rounded font-medium hover:bg-red-600"
+      class="block text-center bg-red-500 text-white py-2 mt-4 font-medium hover:bg-red-600 transition duration-200 ease-in-out"
     >
       Buy
     </nuxt-link>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'ProductCard',
-  props: {
-    name: {
-      type: String,
-      required: true,
-    },
-    description: {
-      type: String,
-      required: true,
-    },
-    price: {
-      type: String,
-      required: true,
-    },
-    imageSrc: {
-      type: String,
-      required: true,
-    },
-  },
-};
+<script lang="ts" setup>
+import { defineProps } from 'vue';
+
+const props = defineProps<{
+  name: string;
+  description: string;
+  price: string;
+  imageSrc: string;
+}>();
 </script>

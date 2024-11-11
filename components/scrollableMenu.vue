@@ -8,7 +8,12 @@
       >
         <a
           href="#"
-          :class="{'text-black': item.isActive, 'text-gray-400': !item.isActive, 'hover:text-red-500': !item.isActive}"
+          :class="{
+            'text-black': item.isActive,
+            'text-gray-400': !item.isActive,
+            'hover:text-red-500': !item.isActive,
+            'transition-colors duration-300 ease-in-out': true
+          }"
           @click.prevent="handleClick(item.data)"
         >
           {{ item.name }}
@@ -18,19 +23,26 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'ScrollableMenu',
-  props: {
-    menuItems: {
-      type: Array,
-      required: true,
-    },
-  },
-  methods: {
-    handleClick(sectionId) {
-      this.$emit('scrollToSection', sectionId);
-    },
-  },
+<script setup lang="ts">
+import { defineProps, defineEmits } from 'vue';
+
+interface MenuItem {
+  id: number | string;
+  name: string;
+  data: string;
+  isActive: boolean;
+}
+
+const props = defineProps<{ menuItems: MenuItem[] }>();
+const emit = defineEmits<{ (e: 'scrollToSection', sectionId: string): void }>();
+
+const handleClick = (sectionId: string) => {
+  emit('scrollToSection', sectionId);
 };
 </script>
+
+<style scoped>
+a {
+  transition: color 0.3s ease-in-out;
+}
+</style>
