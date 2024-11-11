@@ -1,77 +1,107 @@
 <template>
     <div class="relative w-full h-96 overflow-hidden">
-        <div class="flex w-full h-full transition-transform duration-1000 ease-in-out" :style="{ transform: `translateX(-${activeIndex * 100}%)` }">
-            <div class="w-full flex-shrink-0">
-                <div class="bg-cover bg-center h-full w-full" style="background-image: url('https://res.cloudinary.com/dbonwxmgl/image/upload/v1730964706/xqbbmm5jfpznvb6ytxi0.png')">
+        <div
+            class="flex w-full h-full transition-transform duration-1000 ease-in-out"
+            :style="{ transform: `translateX(-${activeIndex.value * 100}%)` }"
+        >
+            <div v-for="(slide, index) in slides" :key="index" class="w-full flex-shrink-0 min-w-full">
+                <div
+                    class="bg-cover bg-center h-full w-full"
+                    :style="{ backgroundImage: `url(${slide.image})` }"
+                >
                     <div class="flex items-center justify-center h-full bg-black bg-opacity-50">
-                        <div class="text-center text-white">
-                            <h1 class="text-4xl font-bold mb-4">Welcome to Our Website</h1>
-                            <p class="text-lg mb-6">Discover amazing products just for you.</p>
-                            <nuxt-link to="/findkfc" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">Shop Now</nuxt-link>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="w-full flex-shrink-0">
-                <div class="bg-cover bg-center h-full w-full" style="background-image: url('https://res.cloudinary.com/dbonwxmgl/image/upload/v1730964741/fnxuwq8gnq72uemp88sn.png')">
-                    <div class="flex items-center justify-center h-full bg-black bg-opacity-50">
-                        <div class="text-center text-white">
-                            <h1 class="text-4xl font-bold mb-4">Exclusive Offers</h1>
-                            <p class="text-lg mb-6">Get the best deals and discounts today.</p>
-                            <nuxt-link to="/booking" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">Explore Offers</nuxt-link>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="w-full flex-shrink-0">
-                <div class="bg-cover bg-center h-full w-full" style="background-image: url('https://res.cloudinary.com/dbonwxmgl/image/upload/v1730964773/ukcwkgp9b7cftdajldm0.png')">
-                    <div class="flex items-center justify-center h-full bg-black bg-opacity-50">
-                        <div class="text-center text-white">
-                            <h1 class="text-4xl font-bold mb-4">Join Our Community</h1>
-                            <p class="text-lg mb-6">Sign up and be a part of our growing community.</p>
-                            <nuxt-link to="/signIn" class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600">Join Now</nuxt-link>
+                        <div class="text-center text-white max-w-lg px-4">
+                            <h1 class="text-4xl font-bold mb-4">{{ slide.title }}</h1>
+                            <p class="text-lg mb-6">{{ slide.description }}</p>
+                            <nuxt-link
+                                :to="slide.link"
+                                class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 transition-colors duration-300"
+                            >
+                                {{ slide.buttonText }}
+                            </nuxt-link>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-            <button v-for="(slide, index) in totalSlides" :key="index" @click="goToSlide(index)" :class="{'bg-white': activeIndex === index, 'bg-gray-400': activeIndex !== index}" class="w-3 h-3 rounded-full"></button>
+            <button
+                v-for="(slide, index) in slides"
+                :key="index"
+                @click="goToSlide(index)"
+                :class="{
+                    'bg-white': activeIndex.value === index,
+                    'bg-gray-400': activeIndex.value !== index
+                }"
+                class="w-3 h-3 rounded-full transition-colors duration-300"
+            ></button>
         </div>
     </div>
 </template>
 
-<script>
-export default {
-    data() {
-        return {
-            activeIndex: 0,
-            totalSlides: 3,
-            autoSlide: null
-        };
+<script setup lang="ts">
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { NuxtLink } from '#components';
+
+interface Slide {
+    title: string;
+    description: string;
+    buttonText: string;
+    link: string;
+    image: string;
+}
+
+const slides: Slide[] = [
+    {
+        title: "Welcome to Our Website",
+        description: "Discover amazing products just for you.",
+        buttonText: "Shop Now",
+        link: "/findkfc",
+        image: "https://res.cloudinary.com/dbonwxmgl/image/upload/v1730964706/xqbbmm5jfpznvb6ytxi0.png",
     },
-    mounted() {
-        this.startAutoSlide();
+    {
+        title: "Exclusive Offers",
+        description: "Get the best deals and discounts today.",
+        buttonText: "Explore Offers",
+        link: "/booking",
+        image: "https://res.cloudinary.com/dbonwxmgl/image/upload/v1730964741/fnxuwq8gnq72uemp88sn.png",
     },
-    beforeDestroy() {
-        clearInterval(this.autoSlide);
+    {
+        title: "Join Our Community",
+        description: "Sign up and be a part of our growing community.",
+        buttonText: "Join Now",
+        link: "/signIn",
+        image: "https://res.cloudinary.com/dbonwxmgl/image/upload/v1730964773/ukcwkgp9b7cftdajldm0.png",
     },
-    methods: {
-        startAutoSlide() {
-            this.autoSlide = setInterval(() => {
-                this.nextSlide();
-            }, 3000); 
-        },
-        nextSlide() {
-            this.activeIndex = (this.activeIndex + 1) % this.totalSlides;
-        },
-        goToSlide(index) {
-            this.activeIndex = index;
-            clearInterval(this.autoSlide);
-            this.startAutoSlide();
-        }
-    }
+];
+
+const activeIndex = ref(0);
+let autoSlide: NodeJS.Timer | null = null;
+
+const startAutoSlide = () => {
+    if (autoSlide) clearInterval(autoSlide);
+    autoSlide = setInterval(() => {
+        nextSlide();
+    }, 3000);
 };
+
+const nextSlide = () => {
+    activeIndex.value = (activeIndex.value + 1) % slides.length;
+};
+
+const goToSlide = (index: number) => {
+    activeIndex.value = index;
+    if (autoSlide) clearInterval(autoSlide);
+    startAutoSlide();
+};
+
+onMounted(() => {
+    startAutoSlide();
+});
+
+onBeforeUnmount(() => {
+    if (autoSlide) clearInterval(autoSlide);
+});
 </script>
 
 <style scoped>

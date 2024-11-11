@@ -2,7 +2,7 @@
    
       <NuxtLink
         :to="link"
-        class="hover:text-gray-700 font-medium transition-colors bg-red-400  p-2 rounded-lg"
+        class="hover:text-gray-700 font-medium transition-colors"
         :class="{ 'text-gray-100 font-bold ': isActive }"
         @mouseover="handleHover"
         @mouseleave="handleLeave"
