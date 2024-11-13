@@ -115,6 +115,7 @@ export default {
       }).then((result) => {
         if (result.isConfirmed) {
           Swal.fire('Success!', 'Proceeding to checkout...', 'success');
+          this.$router.push('/');
         }
       });
     },

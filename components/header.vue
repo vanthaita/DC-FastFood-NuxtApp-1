@@ -13,7 +13,7 @@
         <nav class="hidden lg:flex text-gray-100 justify-center text-xl space-x-6 font-medium transition duration-200 mt-2">
           <HeaderItem title="Home" link="/" :activeLink="currentPath" />
           <HeaderItem title="Booking A Party" link="/booking" :activeLink="currentPath" />
-          <HeaderItem title="Find DC Store" link="/finddc" :activeLink="currentPath" />
+          <HeaderItem title="Find DC Store" link="/findkfc" :activeLink="currentPath" />
         </nav>
       </div>
 
