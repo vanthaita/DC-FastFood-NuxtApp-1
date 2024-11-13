@@ -6,8 +6,6 @@
   
   <script>
   import CartList from '~/components/cartList.vue';
-  import Footer from '~/components/Footer.vue';
-    import Header from '~/components/header.vue';
   
   export default {
     name: 'CartPage',
