@@ -1,7 +1,7 @@
 <template>
-  <div class="min-h-screen w-full text-xl flex flex-col bg-gray-50">
-    <main class="flex-grow p-8">
-      <div class="w-full mx-auto bg-white p-6 shadow-lg rounded-lg">
+  <div class="min-h-screen flex flex-col bg-white p-8">
+    <main class="flex-grow container mx-auto mt-4 flex flex-col space-y-6">
+ <div class="w-full mx-auto bg-white p-6 shadow-lg rounded-lg">
         <div class="flex flex-col md:flex-row gap-6">
           <img :src="product.imageSrc" alt="Product image" class="w-96 h-auto object-cover rounded-lg border border-gray-300">
           <div class="p-4 flex-1">
@@ -30,8 +30,8 @@
           </div>
         </div>
       </div>
+      <ProductRecommend />
     </main>
-    <ProductRecommend :productId="product.id" />
   </div>
 </template>
 
