@@ -90,7 +90,7 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { useRoute } from 'vue-router';
-import HeaderItem from './HeaderItem.vue';
+import HeaderItem from './headerItem.vue'
 
 const route = useRoute();
 const isSidebarOpen = ref(false);

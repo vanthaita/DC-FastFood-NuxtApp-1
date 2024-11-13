@@ -1,7 +1,7 @@
 <template>
   <div class="recommend-list mt-8 ml-8 mr-8">
     <h2 class="text-center font-bold text-4xl mb-4 ml-4 text-gray-700">You might also like:</h2>
-    <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-16 pt-2 pb-2">
+    <div class="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 gap-8 pt-2 pb-2">
       <ProductCard
         v-for="product in recommendedProducts"
         :key="product.id"
