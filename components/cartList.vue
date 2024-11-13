@@ -2,7 +2,7 @@
   <div class="min-h-screen flex flex-col bg-white p-8">
     <main class="flex-grow container mx-auto mt-4 flex flex-col space-y-6">
       <div class="flex justify-between items-center">
-        <h1 class="text-3xl font-bold text-gray-800">Your Shopping Cart</h1>
+        <h1 class="text-3xl font-bold text-red-600">Your Shopping Cart</h1>
       </div>
       <div v-if="cartItems.length" class="bg-white p-6 shadow rounded">
         <table class="min-w-full bg-white">
@@ -19,13 +19,17 @@
             <tr v-for="item in cartItems" :key="item.id" class="border-t">
               <td class="py-2 px-28">{{ item.name }}</td>
               <td class="py-2 px-28">
-                <input
-                  type="number"
-                  v-model.number="item.quantity"
-                  min="1"
-                  class="w-16 p-2 border rounded"
-                  @change="updateQuantity(item.id, item.quantity)"
-                />
+                <div class="flex items-center space-x-2">
+                  <button @click="decreaseQuantity(item.id)" class="bg-gray-300 text-gray-700 px-2 py-1 rounded-l">-</button>
+                  <input
+                    type="number"
+                    v-model.number="item.quantity"
+                    min="1"
+                    class="w-16 p-2 border rounded text-center"
+                    @change="updateQuantity(item.id, item.quantity)"
+                  />
+                  <button @click="increaseQuantity(item.id)" class="bg-gray-300 text-gray-700 px-2 py-1 rounded-r">+</button>
+                </div>
               </td>
               <td class="py-2 px-28">${{ item.price.toFixed(2) }}</td>
               <td class="py-2 px-28">${{ calculateTotal(item).toFixed(2) }}</td>
@@ -37,18 +41,17 @@
             </tr>
           </tbody>
         </table>
-
-        <div class="mt-4 text-right">
-          <h3 class="text-xl font-bold">Total: ${{ cartTotal.toFixed(2) }}</h3>
-          <button class="bg-green-600 text-white px-4 py-2 mt-4 rounded hover:bg-green-700" @click="checkout">
-            Checkout
-          </button>
-        </div>
       </div>
-
       <div v-else class="text-center">
         <p class="text-lg">Your cart is empty.</p>
         <router-link to="/menu" class="text-blue-600 underline">Continue Shopping</router-link>
+      </div>
+      <PackageInf />
+      <div class="mt-4 text-right">
+        <h3 class="text-xl font-bold">Total: ${{ cartTotal.toFixed(2) }}</h3>
+        <button class="bg-green-600 text-white px-4 py-2 mt-4 rounded hover:bg-green-700" @click="checkout">
+          Checkout
+        </button>
       </div>
       <h2 class="text-2xl font-bold text-gray-600 ml-2">Recommend your choice with:</h2>
       <ProductRecommend />
@@ -59,10 +62,11 @@
 <script>
 import Swal from 'sweetalert2';
 import ProductRecommend from './ProductRecommend.vue';
+import PackageInf from './PackageInf.vue';
 
 export default {
   name: 'CartList',
-  components: { ProductRecommend },
+  components: { ProductRecommend, PackageInf },
   data() {
     return {
       cartItems: [
@@ -85,6 +89,18 @@ export default {
       const item = this.cartItems.find(item => item.id === itemId);
       if (item && newQuantity > 0) {
         item.quantity = newQuantity;
+      }
+    },
+    increaseQuantity(itemId) {
+      const item = this.cartItems.find(item => item.id === itemId);
+      if (item) {
+        item.quantity++;
+      }
+    },
+    decreaseQuantity(itemId) {
+      const item = this.cartItems.find(item => item.id === itemId);
+      if (item && item.quantity > 1) {
+        item.quantity--;
       }
     },
     confirmRemove(itemId) {
@@ -114,8 +130,16 @@ export default {
         confirmButtonText: 'Yes, proceed!',
       }).then((result) => {
         if (result.isConfirmed) {
-          Swal.fire('Success!', 'Proceeding to checkout...', 'success');
-          this.$router.push('/');
+          Swal.fire({
+            title: 'Processing...',
+            didOpen: () => {
+              Swal.showLoading();
+            }
+          });
+          setTimeout(() => {
+            Swal.fire('Success!', 'Proceeding to checkout...', 'success');
+            this.$router.push('/');
+          }, 1500);
         }
       });
     },
