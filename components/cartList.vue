@@ -43,8 +43,22 @@
         </table>
       </div>
       <div v-else class="text-center">
-        <p class="text-lg">Your cart is empty.</p>
-        <router-link to="/menu" class="text-blue-600 underline">Continue Shopping</router-link>
+        <table class="min-w-full bg-white">
+          <thead>
+            <tr>
+              <th class="py-2">Item</th>
+              <th class="py-2">Quantity</th>
+              <th class="py-2">Price</th>
+              <th class="py-2">Total</th>
+              <th class="py-2">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t">
+              <td class="py-2 px-28">Your cart is empty.  <router-link to="/" class="text-blue-600 underline">Continue Shopping</router-link></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
       <PackageInf />
       <div class="mt-4 text-right">

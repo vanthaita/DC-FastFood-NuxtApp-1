@@ -1,10 +1,10 @@
 <template>
-  <div class="min-h-screen flex flex-col bg-white">
+  <div class="min-h-screen flex flex-col bg-white p-8">
     <Banner />
     <div ref="scrollableMenuWrapper" class="sticky top-4 z-20">
       <ScrollableMenu :menuItems="combodata" @scrollToSection="scrollToSection" />
     </div>
-    <main class="flex-grow">
+    <main class="flex-grow container mx-auto mt-4 flex flex-col space-y-6">
       <section
         v-for="combo in combodata"
         :key="combo.id"
