@@ -4,7 +4,7 @@
       <div class="flex items-center space-x-4 justify-center">
         <div class="flex gap-x-2 items-center transition-transform hover:scale-105">
           <img
-            src="https://res.cloudinary.com/dbonwxmgl/image/upload/v1730811513/a3dlu88uiel0pogi3sdz.png"
+            src="https://res.cloudinary.com/dbonwxmgl/image/upload/v1731220914/d5gjgrzdoft32wmaxlmy.png"
             alt="DC Logo"
             class="h-14 rounded-full shadow-lg"
           />
@@ -27,7 +27,7 @@
           <span
             class="absolute top-0 right-0 bg-white text-red-600 rounded-full text-xs w-4 h-4 flex items-center justify-center shadow-lg"
           >
-            3
+            {{ cartItems.length }}
           </span>
         </NuxtLink>
         <NuxtLink to="/profile/detail" class="hover:opacity-80" aria-label="Profile">
@@ -62,7 +62,7 @@
             :key="item.name"
             class="p-4 flex items-center space-x-2 hover:bg-red-100 transition duration-200"
           >
-            <NuxtLink :to="item.link" class="text-gray-700 flex items-center p-2 transition hover:text-red-500">
+            <NuxtLink :to="item.link" class="text-gray-700 flex items-center p-2 transition hover:text-red-500" @click="toggleSidebar">
               <i :class="item.icon + ' mr-2 text-lg'"></i>
               {{ item.name }}
             </NuxtLink>
@@ -90,14 +90,17 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { useRoute } from 'vue-router';
+import { useCartStore } from '../store';
 import HeaderItem from './headerItem.vue'
 
 const route = useRoute();
+const cartStore = useCartStore();
+const cartItems = computed(() => cartStore.cartItems || []);
 const isSidebarOpen = ref(false);
 const navItems = [
   { name: 'Home', link: '/', icon: 'fas fa-home fa-lg' },
   { name: 'Booking a party', link: '/booking', icon: 'fas fa-calendar-alt fa-lg' },
-  { name: 'Find DC store', link: '/finddc', icon: 'fas fa-map-marker-alt fa-lg' },
+  { name: 'Find DC store', link: '/findkfc', icon: 'fas fa-map-marker-alt fa-lg' },
   { name: 'Your Profile', link: '/profile/detail', icon: 'fas fa-user fa-lg' },
   { name: 'Log In', link: '/signIn', icon: 'fas fa-sign-in-alt fa-lg' },
 ];

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div 
-      class="fixed inset-0 bg-black bg-opacity-50 z-40"
+      class="fixed inset-0 bg-black bg-opacity-50 z-50"
       v-if="isOpen"
       @click="toggleSidebar"
     ></div>
