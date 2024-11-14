@@ -33,6 +33,7 @@ export const useCartStore = defineStore('cart', {
     addToCart(product: Product) {
       const existingItem = this.cartItems.find((item) => item.id === product.id);
       if (existingItem) {
+        console.log(`Already added to cart: ${product.name}`);
         existingItem.quantity += product.quantity;
       } else {
         this.cartItems.push(product);
