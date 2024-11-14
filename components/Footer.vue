@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-gradient-to-r from-red-600 to-red-500 text-white py-16">
+  <footer class="bg-gray-900 text-white py-16">
     <div class="container mx-auto px-6">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div class="space-y-4">

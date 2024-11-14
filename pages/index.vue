@@ -83,8 +83,8 @@ const combodata = ref<ComboData[]>([
   },
   {
     id: 3,
-    name: 'Combo for 1',
-    data: 'combofor1',
+    name: 'Single Combo',
+    data: 'singlecombo',
     isActive: false,
     products: [
       { id: 1, name: 'Solo Meal', description: 'A perfect meal for one.', price: '$12', imageSrc: 'https://res.cloudinary.com/dbonwxmgl/image/upload/v1731047465/wkkhkxh9olf37nifb0b4.png' },

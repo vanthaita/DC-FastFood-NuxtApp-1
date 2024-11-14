@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen flex flex-col h-full">
+  <div class="min-h-screen flex flex-col h-full z-10">
     <main class="flex-grow container mx-auto mt-8 h-full">
       <div class="mx-auto bg-white p-4 shadow-lg rounded-lg">
         <h2 class="text-2xl font-bold mb-6 text-center text-red-600">Find DC Near You</h2>

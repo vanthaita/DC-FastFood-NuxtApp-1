@@ -7,10 +7,6 @@
       <p class="text-gray-600">Phone: {{ recipientPhone }}</p>
     </div>
     <div class="mb-4">
-      <h3 class="text-lg font-semibold text-gray-700">Delivery Option</h3>
-      <p class="text-gray-600">{{ deliveryOption.name }} - ${{ deliveryOption.cost.toFixed(2) }}</p>
-    </div>
-    <div class="mb-4">
       <h3 class="text-lg font-semibold text-gray-700">Delivery Address</h3>
       <p class="text-gray-600">{{ address.street }}, {{ address.city }}, {{ address.state }} {{ address.zip }}</p>
     </div>
@@ -22,11 +18,6 @@ import { ref, computed } from 'vue';
 
 const recipientName = ref('Lê Thanh Tài');
 const recipientPhone = ref('0356356497');
-const deliveryOption = ref({
-  id: 1,
-  name: 'Standard',
-  cost: 5.00,
-});
 const address = ref({
   street: '182 Đường số 2',
   city: 'TP Thu Duc',
