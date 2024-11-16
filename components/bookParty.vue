@@ -87,6 +87,7 @@
                   v-model="form.requests" 
                   placeholder="Enter any additional requests" 
                   class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
+                  required
                 ></textarea>
               </div>
               <div class="text-center">
@@ -98,9 +99,6 @@
                 </button>
               </div>
             </form>
-            <div v-if="successMessage" class="mt-4 text-green-600 text-center">
-              {{ successMessage }}
-            </div>
           </div>
         </div>
       </div>
@@ -108,35 +106,36 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      form: {
-        name: '',
-        email: '',
-        phone: '',
-        date: '',
-        time: '',
-        guests: 1,
-        requests: ''
-      },
-      successMessage: ''
-    };
-  },
-  methods: {
-    submitForm() {
-      this.successMessage = `Booking successfully submitted for ${this.form.name}!`;
-      this.form = {
-        name: '',
-        email: '',
-        phone: '',
-        date: '',
-        time: '',
-        guests: 1,
-        requests: ''
-      };
-    }
-  }
+<script setup lang="ts">
+import { ref } from 'vue';
+import Swal from 'sweetalert2';
+
+const form = ref({
+  name: '',
+  email: '',
+  phone: '',
+  date: '',
+  time: '',
+  guests: 1,
+  requests: ''
+});
+
+const submitForm = () => {
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: `Pleased to serve you`,
+    showConfirmButton: false,
+    timer: 1500
+  });
+  form.value = {
+    name: '',
+    email: '',
+    phone: '',
+    date: '',
+    time: '',
+    guests: 1,
+    requests: ''
+  };
 };
 </script>
