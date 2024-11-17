@@ -10,8 +10,8 @@
                 class="w-full p-2 border border-gray-300 rounded mb-4"
             />
             <div class="flex justify-end space-x-4">
-                <button @click="closePopup" class="border-solid border-2 border-gray-400 text-transparent bg-clip-text bg-gradient-to-r from-gray-400 to-emerald-600 text-2xl font-bold px-4 py-2 rounded hover:bg-gray-400 ">Cancel</button>
-                <button @click="resetPassword" class="bg-gradient-to-r from-orange-500 via-pink-500 pl-2 pr-2 to-red-500 text-white text-2xl font-bold py-2 rounded hover:bg-red-700">Submit</button>
+                <button @click="closePopup" class="border-solid border-2 border-gray-400 text-gray-400 bg-clip-text bg-gradient-to-r from-gray-400 to-emerald-600 text-2xl font-bold px-4 py-2 rounded-2xl ">Cancel</button>
+                <button @click="resetPassword" class="bg-gradient-to-r from-orange-500 via-pink-500 pl-2 pr-2 to-red-500 text-white text-2xl font-bold py-2 rounded-2xl">Submit</button>
             </div>
         </div>
     </div>

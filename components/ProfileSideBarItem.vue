@@ -4,7 +4,7 @@
       v-if="title !== 'Delete Account'"
       :to="link"
       class="hover:text-red-500 transition-colors"
-      :class="{ 'text-red-500': isActive }"
+      :class="{ 'text-red-500 p-4 bg-white rounded-2xl': isActive }"
       @mouseover="handleHover"
       @mouseleave="handleLeave"
     >
