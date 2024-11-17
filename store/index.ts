@@ -16,11 +16,13 @@ interface Product {
 
 interface State {
   cartItems: Product[];
+  previousOrders: Product[][];
 }
 
 export const useCartStore = defineStore('cart', {
   state: (): State => ({
     cartItems: [],
+    previousOrders: [],
   }),
   getters: {
     cartTotal: (state) =>
@@ -51,6 +53,10 @@ export const useCartStore = defineStore('cart', {
       this.cartItems = [];
       this.saveCartToLocalStorage();
     },
+    addPreviousOrder(order: Product[]) {
+      this.previousOrders.push(order);
+      this.savePreviousOrdersToLocalStorage();
+    },
     saveCartToLocalStorage() {
       if (process.client) {
         localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
@@ -63,6 +69,23 @@ export const useCartStore = defineStore('cart', {
           this.cartItems = JSON.parse(storedCart);
         }
       }
+    },
+    savePreviousOrdersToLocalStorage() {
+      if (process.client) {
+        localStorage.setItem('previousOrders', JSON.stringify(this.previousOrders));
+      }
+    },
+    loadPreviousOrdersFromLocalStorage() {
+      if (process.client) {
+        const storedOrders = localStorage.getItem('previousOrders');
+        if (storedOrders) {
+          this.previousOrders = JSON.parse(storedOrders);
+        }
+      }
+    },
+    clearPreviousOrders() {
+      this.previousOrders = [];
+      this.savePreviousOrdersToLocalStorage();
     },
   },
 });

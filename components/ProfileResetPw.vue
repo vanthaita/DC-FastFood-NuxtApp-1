@@ -17,7 +17,7 @@
       <div v-if="errorMessage" class="mb-4 text-red-600">
         {{ errorMessage }}
       </div>
-      <button type="submit" class="mt-6 bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition-colors">
+      <button type="submit" class="mt-6 bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition-colors font-bold">
         Reset Password
       </button>
     </form>

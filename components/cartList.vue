@@ -144,6 +144,7 @@ const checkout = () => {
       });
       setTimeout(() => {
         Swal.fire('Success!', 'Proceeding to checkout...', 'success');
+        cartStore.addPreviousOrder([...cartItems.value]);
         cartStore.clearCart();
       }, 1500);
     }

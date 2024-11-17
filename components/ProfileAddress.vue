@@ -21,7 +21,7 @@
             <input type="text" id="zip" v-model="form.zip" class="border p-2 w-full rounded" required />
           </div>
         </div>
-        <button type="submit" class="mt-6 bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition-colors">
+        <button type="submit" class="mt-6 bg-red-600 text-white py-2 px-4 rounded hover:bg-red-700 transition-colors font-bold">
           {{ editMode ? 'Update Address' : 'Add Address' }}
         </button>
       </form>

@@ -5,8 +5,9 @@
         <h2 class="text-2xl font-bold mt-4">Hello TLee</h2>
         <NuxtLink to="/SignIn" class="text-sm text-gray-400 underline hover:text-red-400 transition-colors duration-200">Logout</NuxtLink>
       </div>
-      <ul class="space-y-6 text-lg">
+      <ul class="space-y-6 text-lg font-bold">
         <SidebarItem title="Account Details" link="/profile/detail" :activeLink="currentPath" />
+        <SidebarItem title="Previous Orders" link="/profile/previous_orders" :activeLink="currentPath" />
         <SidebarItem title="Your Address" link="/profile/address" :activeLink="currentPath" />
         <SidebarItem title="Reset Password" link="/profile/reset_password" :activeLink="currentPath" />
         <SidebarItem title="Delete Account" link="/profile/delete_account" :activeLink="currentPath" />
