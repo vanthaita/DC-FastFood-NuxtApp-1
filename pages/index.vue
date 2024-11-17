@@ -26,6 +26,7 @@
         </div>
       </section>
     </main>
+    <testimonial />
   </div>
 </template>
 
@@ -35,6 +36,7 @@ import ProductCard from '@/components/ProductCard.vue';
 import Banner from '../components/banner.vue';
 import ScrollableMenu from '../components/scrollableMenu.vue';
 import { combodata as comboDataSource } from '../data/combodata';
+import testimonial from '~/components/testimonial.vue';
 
 const combodata = ref(comboDataSource);
 
