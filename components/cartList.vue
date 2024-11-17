@@ -103,7 +103,7 @@ const confirmRemove = (itemId: number) => {
     confirmButtonText: 'Yes, remove it!',
   }).then((result) => {
     if (result.isConfirmed) {
-      cartStore.updateCart(cartItems.value.filter((item) => item.id !== itemId));
+      cartStore.deleteItem(itemId);
       Swal.fire({
         title: 'Processing...',
         didOpen: () => {
@@ -111,9 +111,8 @@ const confirmRemove = (itemId: number) => {
         }
       });
       setTimeout(() => {
-        Swal.fire('Success!', 'The item has been removed from your cart.', 'success');
-        window.location.reload();
-      }, 1500);
+        Swal.fire('Success!', 'Item removed from cart.', 'success');
+      }, 900);
     }
   });
 };

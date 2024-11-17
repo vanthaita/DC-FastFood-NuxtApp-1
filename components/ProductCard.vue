@@ -10,6 +10,7 @@
       :to="{
         path: '/productDetail',
         query: {
+          id: id,
           name: name,
           description: description,
           price: price,
@@ -27,6 +28,7 @@
 import { defineProps } from 'vue';
 
 const props = defineProps<{
+  id: number; 
   name: string;
   description: string;
   price: string;

@@ -17,7 +17,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
           <ProductCard
             v-for="item in combo.products"
-            :key="item.id"
+            :id="item.id"
             :name="item.name"
             :description="item.description"
             :price="item.price"

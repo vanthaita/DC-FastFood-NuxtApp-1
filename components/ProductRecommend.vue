@@ -4,7 +4,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       <ProductCard
         v-for="product in recommendedProducts"
-        :key="product.id"
+        :id="product.id"
         :name="product.name"
         :description="product.description"
         :price="product.price"

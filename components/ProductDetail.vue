@@ -4,7 +4,7 @@
       <div class="w-full mx-auto bg-white p-6 shadow-lg rounded-lg">
         <div class="flex flex-col md:flex-row gap-6">
           <img :src="product.imageSrc" alt="Product image" class="w-96 h-auto object-cover rounded-lg border border-gray-300">
-          <div class="p-4 flex-1">
+          <div class="p-4 flex-1">   
             <h2 class="text-3xl font-bold text-gray-800">{{ product.name }}</h2>
             <p class="mt-4 text-1xl font-bold text-red-600">Price: ${{ formattedPrice }}</p>
             <div class="mt-4">
@@ -55,8 +55,8 @@ const product = ref({
 
 const quantity = ref(1);
 const deliveryOptions = ref([
-  { id: 1, name: 'Standard', cost: 5.00 },
-  { id: 2, name: 'Express', cost: 10.00 },
+  { id: 1101, name: 'Standard', cost: 5.00 },
+  { id: 2202, name: 'Express', cost: 10.00 },
 ]);
 const selectedDelivery = ref(deliveryOptions.value[0]);
 
