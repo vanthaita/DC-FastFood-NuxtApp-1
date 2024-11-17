@@ -21,6 +21,7 @@
             <tr v-for="item in cartItems" :key="item.id" class="border-t">
               <td class="py-2 text-left">{{ item.name }}</td>
               <td class="py-2 flex items-center justify-center">
+                <button @click="decreaseQuantity(item.id)" class="bg-gray-300 text-gray-700 px-2 py-1 rounded-l">-</button>
                 <input
                   type="number"
                   v-model.number="item.quantity"
@@ -28,6 +29,7 @@
                   class="w-16 p-2 border-t border-b border-gray-300 rounded-none text-center"
                   @change="updateQuantity(item.id, item.quantity)"
                 />
+                <button @click="increaseQuantity(item.id)" class="bg-gray-300 text-gray-700 px-2 py-1 rounded-r">+</button>
               </td>
               <td class="py-2 text-right">{{ item.deliveryOption.name }}</td>
               <td class="py-2 text-right">${{ item.deliveryOption.cost.toFixed(2) }}</td>
@@ -92,6 +94,22 @@ const updateQuantity = (itemId: number, newQuantity: number) => {
   }
 };
 
+const increaseQuantity = (itemId: number) => {
+  const item = cartItems.value.find((item) => item.id === itemId);
+  if (item) {
+    item.quantity++;
+    cartStore.updateCart(cartItems.value);
+  }
+};
+
+const decreaseQuantity = (itemId: number) => {
+  const item = cartItems.value.find((item) => item.id === itemId);
+  if (item && item.quantity > 1) {
+    item.quantity--;
+    cartStore.updateCart(cartItems.value);
+  }
+};
+
 const confirmRemove = (itemId: number) => {
   Swal.fire({
     title: 'Are you sure?',
@@ -111,7 +129,13 @@ const confirmRemove = (itemId: number) => {
         }
       });
       setTimeout(() => {
-        Swal.fire('Success!', 'Item removed from cart.', 'success');
+        Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: 'Item removed from cart.',
+    showConfirmButton: false,
+    timer: 1000
+  });
       }, 900);
     }
   });

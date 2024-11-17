@@ -10,7 +10,9 @@
             <div class="mt-4">
               <div class="flex flex-row">
                 <label for="quantity" class="block text-xl font-semibold mr-4">Quantity</label>
+                <button @click="decreaseQuantity" class="bg-gray-300 text-gray-700 px-2 py-1 rounded-l">-</button>
                 <input v-model.number="quantity" type="number" id="quantity" min="1" class="border rounded w-16 text-center" />
+                <button @click="increaseQuantity" class="bg-gray-300 text-gray-700 px-2 py-1 rounded-r">+</button>
               </div>
               <label for="delivery" class="block text-lg font-semibold mt-4">Delivery Option</label>
               <select v-model="selectedDelivery" id="delivery" class="border p-2 rounded w-3/5">
@@ -62,6 +64,16 @@ const selectedDelivery = ref(deliveryOptions.value[0]);
 
 const formattedPrice = computed(() => product.value.price.toFixed(2));
 const totalBill = computed(() => (product.value.price * quantity.value + selectedDelivery.value.cost).toFixed(2));
+
+const increaseQuantity = () => {
+  quantity.value++;
+};
+
+const decreaseQuantity = () => {
+  if (quantity.value > 1) {
+    quantity.value--;
+  }
+};
 
 const buyNow = () => {
   cartStore.addToCart({
