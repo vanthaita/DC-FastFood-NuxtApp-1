@@ -10,8 +10,8 @@
           href="#"
           :class="{
             'text-white bg-red-400 p-4 rounded-2xl': item.isActive,
-            'text-gray-600': !item.isActive,
-            'hover:text-black': !item.isActive,
+            'text-white': !item.isActive,
+            'hover:text-gray-900': !item.isActive,
             'transition-colors duration-300 ease-in-out': true
           }"
           @click.prevent="handleClick(item)"
