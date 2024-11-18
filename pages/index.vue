@@ -25,6 +25,7 @@
           />
         </div>
       </section>
+      <Gallery />
     </main>
     <testimonial />
   </div>
@@ -37,6 +38,7 @@ import Banner from '../components/banner.vue';
 import ScrollableMenu from '../components/scrollableMenu.vue';
 import { combodata as comboDataSource } from '../data/combodata';
 import testimonial from '~/components/testimonial.vue';
+import Gallery from '~/components/Gallery.vue';
 
 const combodata = ref(comboDataSource);
 

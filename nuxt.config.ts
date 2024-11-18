@@ -30,6 +30,7 @@ export default defineNuxtConfig({
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
+      'vue-final-modal': '~/plugins/vue-final-modal',
     },
   },
   icon: {
