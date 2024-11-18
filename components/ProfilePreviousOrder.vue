@@ -25,7 +25,7 @@
         </tbody>
       </table>
       <div class="mt-4 text-right">
-        <button @click="clearPreviousOrders" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 font-bold">
+        <button @click="clearPreviousOrders" class="bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 text-white px-4 py-2 rounded hover:bg-red-700 font-bold">
           Clear All Previous Orders
         </button>
       </div>

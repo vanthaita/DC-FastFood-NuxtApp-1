@@ -93,7 +93,7 @@
               <div class="text-center">
                 <button 
                   type="submit" 
-                  class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors"
+                  class="bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors"
                 >
                   Submit Booking
                 </button>

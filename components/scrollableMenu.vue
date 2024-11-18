@@ -1,6 +1,6 @@
 <template>
   <div class="overflow-x-auto py-0 whitespace-nowrap">
-    <div class="flex space-x-8 justify-center bg-gradient-to-r from-gray-400 to-emerald-600 p-4 rounded-xl">
+    <div class="flex space-x-8 justify-center bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 p-4 rounded-xl">
       <div
         v-for="item in menuItems"
         :key="item.id"
@@ -10,7 +10,7 @@
           href="#"
           :class="{
             'text-white bg-red-400 p-4 rounded-2xl': item.isActive,
-            'text-white': !item.isActive,
+            'text-gray-100': !item.isActive,
             'hover:text-gray-900': !item.isActive,
             'transition-colors duration-300 ease-in-out': true
           }"

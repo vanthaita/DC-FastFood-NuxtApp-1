@@ -22,7 +22,7 @@
                   />
                   <button
                     type="submit"
-                    class="absolute right-1 top-1/2 transform -translate-y-1/2 text-white bg-red-600 px-4 py-2 rounded-lg hover:bg-red-700 focus:outline-none"
+                    class="absolute right-1 top-1/2 transform -translate-y-1/2 text-white bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 px-4 py-2 rounded-lg hover:bg-red-700 focus:outline-none"
                   >
                     Search
                   </button>
@@ -34,7 +34,7 @@
               <p v-if="selectedAddress">{{ selectedAddress }}</p>
               <p v-else class="text-gray-500">No address selected.</p>
             </div>
-            <div id="map" class="h-full w-full rounded-lg"></div>
+            <div id="map" class="h-full w-full relative rounded-lg z-[9998]"></div>
             <div v-if="error" class="mt-4 text-red-600 text-center">
               <p>{{ error }}</p>
             </div>

@@ -50,7 +50,7 @@
         </div>
       </div>
 
-      <button type="submit" class="mt-6 bg-red-600 text-white py-2 font-bold px-4 rounded hover:bg-red-700 transition-colors">
+      <button type="submit" class="mt-6 bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 text-white py-2 font-bold px-4 rounded hover:bg-red-700 transition-colors">
         Update Account
       </button>
     </form>

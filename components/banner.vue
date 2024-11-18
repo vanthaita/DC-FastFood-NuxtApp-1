@@ -15,7 +15,7 @@
               <p class="text-lg mb-6">{{ slide.description }}</p>
               <nuxt-link
                 :to="slide.link"
-                class="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 transition-colors duration-300"
+                class="bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 text-white py-2 px-4 rounded hover:bg-red-600 transition-colors duration-300"
               >
                 {{ slide.buttonText }}
               </nuxt-link>
