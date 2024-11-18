@@ -48,7 +48,7 @@
           <p class="text-white opacity-80 mb-4 text-sm md:text-base">Sign up for our newsletter to receive the latest updates and special offers!</p>
           <form class="flex">
             <input type="email" placeholder="Enter your email" class="px-4 py-2 text-black rounded-l-lg flex-1" />
-            <button class="bg-red-700 text-white px-6 py-2 rounded-r-lg hover:bg-red-600 transition-colors duration-300">Subscribe</button>
+            <button class="bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 text-white px-6 py-2 rounded-r-lg hover:bg-red-600 transition-colors duration-300">Subscribe</button>
           </form>
         </div>
       </div>

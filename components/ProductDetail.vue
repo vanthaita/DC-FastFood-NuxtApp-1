@@ -24,7 +24,7 @@
             <div class="mt-4">
               <h3 class="text-xl font-bold text-red-600">Total Bill: ${{ totalBill }}</h3>
             </div>
-            <button @click="buyNow" class="mt-4 bg-red-600 text-white p-3 font-medium rounded-lg hover:bg-red-700 transition duration-300 transform hover:scale-105">Buy Now</button>
+            <button @click="buyNow" class="mt-4 bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 text-white p-3 font-medium rounded-lg hover:bg-red-700 transition duration-300 transform hover:scale-105">Buy Now</button>
             <div class="mt-6">
               <h3 class="text-xl font-bold text-gray-800">Additional Details</h3>
               <p class="mt-2 text-gray-600">{{ product.description }}</p>

@@ -1,5 +1,5 @@
 <template>
-  <header class="bg-gradient-to-r from-red-500 via-red-600 to-red-700 text-white py-4 shadow-lg relative">
+  <header class="bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 text-white py-4 shadow-lg relative">
     <div class="max-w-screen-xl mx-auto px-4 flex items-center justify-between">
       <div class="flex items-center space-x-4 justify-center">
         <div class="flex gap-x-2 items-center transition-transform hover:scale-105">
@@ -52,7 +52,7 @@
         class="fixed top-0 right-0 w-2/3 lg:w-1/3 h-full bg-white z-50 transform transition-transform duration-300 ease-in-out shadow-xl"
         :class="isSidebarOpen ? 'translate-x-0' : 'translate-x-full'"
       >
-        <div class="p-8 flex justify-between items-center bg-gradient-to-r from-red-600 to-red-700 text-white">
+        <div class="p-8 flex justify-between items-center bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 text-white">
           <span class="text-2xl font-bold">Menu</span>
           <button @click="toggleSidebar" class="text-2xl">&times;</button>
         </div>

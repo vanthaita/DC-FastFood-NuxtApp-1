@@ -25,40 +25,21 @@
       >
         <div class="relative bg-white p-6 rounded-lg max-w-4xl w-full">
           <button
-            class="absolute top-2 right-2 bg-white text-gray-700 p-2 rounded-full shadow-lg"
-            @click="closeModal"
-          >
-            <svg
-              class="w-6 h-6"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
-          <button
-            class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-lg"
+            class="absolute top-1/2 left-1 transform -translate-y-1/2 p-4 rounded-full text-2xl font-bold shadow-xl"
             @click="prevImage"
           >
-            &larr;
+            <
           </button>
-          <img
+            <img
             :src="images[currentImage]"
             alt="Modal Image"
-            class="max-w-full max-h-[80vh] object-contain rounded-lg"
-          />
+            class="max-w-full max-h-[80vh] object-contain mx-auto rounded-lg"
+            />
           <button
-            class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white p-2 font-bold rounded-full shadow-lg"
+            class="absolute top-1/2 right-1 transform -translate-y-1/2 p-4 rounded-full text-2xl font-bold shadow-xl"
             @click="nextImage"
           >
-            &rarr;
+            >
           </button>
         </div>
       </div>

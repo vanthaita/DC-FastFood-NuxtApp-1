@@ -17,7 +17,7 @@
           imageSrc: imageSrc,
         },
       }"
-      class="block text-center bg-red-500 text-white py-2 mt-4 font-medium hover:bg-red-600 transition duration-200 ease-in-out"
+      class="block text-center bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 text-white py-2 mt-4 font-medium hover:bg-red-600 transition duration-200 ease-in-out"
     >
       Buy
     </nuxt-link>
