@@ -8,6 +8,7 @@
       <ul class="space-y-6 text-lg font-bold">
         <SidebarItem title="Account Details" link="/profile/detail" :activeLink="currentPath" />
         <SidebarItem title="Previous Orders" link="/profile/previous_orders" :activeLink="currentPath" />
+        <SidebarItem title="Booking Details" link="/profile/booking" :activeLink="currentPath" />
         <SidebarItem title="Your Address" link="/profile/address" :activeLink="currentPath" />
         <SidebarItem title="Reset Password" link="/profile/reset_password" :activeLink="currentPath" />
         <SidebarItem title="Delete Account" link="/profile/delete_account" :activeLink="currentPath" />

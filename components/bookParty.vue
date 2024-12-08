@@ -69,6 +69,20 @@
                 />
               </div>
               <div class="mb-4">
+                <label for="locate" class="block text-sm font-bold text-gray-500">Location :</label>
+                <select 
+                  id="locate" 
+                  v-model="form.locate" 
+                  class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-600"
+                  required
+                >
+                  <option value="" disabled selected>Select a location</option>
+                  <option v-for="location in storeAddress" :key="location.id" :value="location.address">
+                    {{ location.name }}
+                  </option>
+                </select>
+              </div>
+              <div class="mb-4">
                 <label for="guests" class="block text-sm font-bold text-gray-500">Number of Guests :</label>
                 <input 
                   type="number" 
@@ -106,9 +120,14 @@
   </div>
 </template>
 
+
 <script setup lang="ts">
 import { ref } from 'vue';
 import Swal from 'sweetalert2';
+import { useBookingStore } from '~/store/bookingStore';
+import { storeAddress } from '~/data/storeAddress';
+import type { StoreAddress } from '~/data/storeAddress';
+const bookingStore = useBookingStore();  
 
 const form = ref({
   name: '',
@@ -116,11 +135,25 @@ const form = ref({
   phone: '',
   date: '',
   time: '',
+  locate: '',
   guests: 1,
   requests: ''
 });
 
 const submitForm = () => {
+  const newBooking = {
+    id: Date.now(), // Generate a unique ID based on the current timestamp
+    name: form.value.name,
+    email: form.value.email,
+    phone: form.value.phone,
+    date: form.value.date,
+    time: form.value.time,
+    location: form.value.locate,
+    guests: form.value.guests,
+    requests: form.value.requests,
+  };
+
+  bookingStore.addBooking(newBooking);
   Swal.fire({
     position: 'top-end',
     icon: 'success',
@@ -133,9 +166,11 @@ const submitForm = () => {
     email: '',
     phone: '',
     date: '',
+    locate: '',
     time: '',
     guests: 1,
     requests: ''
   };
 };
 </script>
+
