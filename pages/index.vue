@@ -4,7 +4,7 @@
     <div ref="scrollableMenuWrapper" class="sticky top-4 z-20">
       <ScrollableMenu :menuItems="combodata" @scrollToSection="scrollToSection" />
     </div>
-    <main class="flex-grow container mx-auto mt-4 flex flex-col space-y-6">
+    <main class="flex-grow container mx-auto mt-4 mb-2 flex flex-col space-y-6">
       <section
         v-for="combo in combodata"
         :key="combo.id"
