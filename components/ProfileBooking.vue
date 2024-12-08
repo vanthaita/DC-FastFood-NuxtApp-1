@@ -80,8 +80,8 @@ const editBooking = (booking: Booking) => {
     showCancelButton: true,
     cancelButtonText: 'Cancel',
     confirmButtonText: 'Update Booking',
-    confirmButtonColor: '#3498db', // Blue button color
-    cancelButtonColor: '#e74c3c', // Red cancel color
+    confirmButtonColor: '#3498db', 
+    cancelButtonColor: '#e74c3c', 
     focusConfirm: false,
     focusCancel: false,
     preConfirm: () => {
