@@ -142,7 +142,7 @@ const form = ref({
 
 const submitForm = () => {
   const newBooking = {
-    id: Date.now(), // Generate a unique ID based on the current timestamp
+    id: Date.now(), 
     name: form.value.name,
     email: form.value.email,
     phone: form.value.phone,
