@@ -1,5 +1,7 @@
 <template>
-  <div class="min-h-screen flex flex-col bg-white p-8">
+  <div>
+    <loading v-if="isLoading" />
+    <div v-else  class="min-h-screen flex flex-col bg-white p-8">
     <Banner />
     <div ref="scrollableMenuWrapper" class="sticky top-4 z-20">
       <ScrollableMenu :menuItems="combodata" @scrollToSection="scrollToSection" />
@@ -25,23 +27,30 @@
           />
         </div>
       </section>
-      <Gallery />
+      <Gallery/>
     </main>
-    <testimonial />
+    <testimonial/>
+  </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import ProductCard from '@/components/ProductCard.vue';
+import ProductCard from '~/components/ProductCard.vue';
 import Banner from '../components/banner.vue';
 import ScrollableMenu from '../components/scrollableMenu.vue';
 import { combodata as comboDataSource } from '../data/combodata';
 import testimonial from '~/components/testimonial.vue';
 import Gallery from '~/components/Gallery.vue';
+import loading from '~/components/loading.vue';
 
 const combodata = ref(comboDataSource);
-
+const isLoading = ref(true);
+onMounted(() => {
+  setTimeout(() => {
+    isLoading.value = false;
+  }, 1000); 
+});
 const scrollToSection = (sectionId: string) => {
   const element = document.getElementById(sectionId);
   if (element) {

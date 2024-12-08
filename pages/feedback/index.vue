@@ -1,5 +1,7 @@
 <template>
-  <div class="p-6 bg-white pr-48 pl-48 p-4 mx-auto shadow-lg rounded-lg">
+  <div>
+    <loading v-if="isLoading" />
+  <div v-else class="p-6 bg-white pr-48 pl-48 p-4 mx-auto shadow-lg rounded-lg">
     <h2 class="text-4xl text-center font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-400">
       We Value Your Feedback!
     </h2>
@@ -91,6 +93,7 @@
       </div>
     </div>
   </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -104,7 +107,13 @@ const testimonialStore = useTestimonialStore();
 const { testimonials } = storeToRefs(testimonialStore);
 const { addTestimonial, loadTestimonialsFromLocalStorage, deleteTestimonial: storeDeleteTestimonial } = testimonialStore;
 const defaultAvatar = "https://res.cloudinary.com/dbonwxmgl/image/upload/v1727938015/bmvfqez2etar0obzrqgt.jpg";
-
+import loading from '~/components/loading.vue';
+const isLoading = ref(true);
+onMounted(() => {
+  setTimeout(() => {
+    isLoading.value = false;
+  }, 1000);
+});
 const newTestimonial = ref({
   name: "",
   message: "",

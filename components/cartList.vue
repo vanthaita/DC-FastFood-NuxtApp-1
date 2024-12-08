@@ -61,7 +61,6 @@
           Checkout
         </button>
       </div>
-      <h2 class="text-xl font-semibold text-gray-800">Recommend your choice with:</h2>
       <ProductRecommend />
     </main>
   </div>

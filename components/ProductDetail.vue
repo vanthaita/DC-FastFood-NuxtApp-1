@@ -5,16 +5,16 @@
         <div class="flex flex-col md:flex-row gap-6">
           <img :src="product.imageSrc" alt="Product image" class="w-96 h-auto object-cover rounded-lg border border-gray-300">
           <div class="p-4 flex-1">   
-            <h2 class="text-3xl font-bold text-gray-800">{{ product.name }}</h2>
+            <h2 class="text-3xl font-bold text-gray-600">{{ product.name }}</h2>
             <p class="mt-4 text-1xl font-bold text-red-600">Price: ${{ formattedPrice }}</p>
             <div class="mt-4">
               <div class="flex flex-row">
-                <label for="quantity" class="block text-xl font-semibold mr-4">Quantity</label>
-                <button @click="decreaseQuantity" class="bg-gray-300 text-gray-700 text-xl font-bold px-2 py-1 rounded-l hover:bg-red-400">-</button>
+                <label for="quantity" class="block text-xl text-gray-600 font-semibold mr-4">Quantity</label>
+                <button @click="decreaseQuantity" class="bg-gray-300 text-gray-600 text-xl font-bold px-2 py-1 rounded-l hover:bg-red-400">-</button>
                 <input v-model.number="quantity" type="number" id="quantity" min="1" class="border rounded w-16 text-center" />
-                <button @click="increaseQuantity" class="bg-gray-300 text-gray-700 text-xl font-bold px-2 py-1 rounded-r hover:bg-green-400">+</button>
+                <button @click="increaseQuantity" class="bg-gray-300 text-gray-600 text-xl font-bold px-2 py-1 rounded-r hover:bg-green-400">+</button>
               </div>
-              <label for="delivery" class="block text-lg font-semibold mt-4">Delivery Option</label>
+              <label for="delivery" class="block text-gray-600 text-lg font-semibold mt-4">Delivery Option</label>
               <select v-model="selectedDelivery" id="delivery" class="border p-2 rounded w-3/5">
                 <option v-for="option in deliveryOptions" :key="option.id" :value="option">
                   {{ option.name }} - ${{ option.cost.toFixed(2) }}
@@ -26,7 +26,7 @@
             </div>
             <button @click="buyNow" class="mt-4 bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 text-white p-3 font-medium rounded-lg hover:bg-red-700 transition duration-300 transform hover:scale-105">Buy Now</button>
             <div class="mt-6">
-              <h3 class="text-xl font-bold text-gray-800">Additional Details</h3>
+              <h3 class="text-xl font-bold text-gray-600">Additional Details</h3>
               <p class="mt-2 text-gray-600">{{ product.description }}</p>
             </div>
           </div>
