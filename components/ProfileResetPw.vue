@@ -1,23 +1,61 @@
 <template>
-  <div class="reset-password-container p-6 bg-gray-100 rounded-lg shadow-lg">
-    <h2 class="text-4xl text-center font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-400">Reset Password</h2>
+  <div
+    class="reset-password-container w-full md:w-3/4 p-6 bg-white rounded-lg shadow-lg transform transition-all duration-300 hover:scale-102"
+  >
+    <h2
+      class="text-3xl md:text-4xl text-center font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-400"
+    >
+      Reset Password
+    </h2>
     <form @submit.prevent="handleSubmit">
-      <div class="mb-4">
-        <label class="block mb-2 font-semibold" for="currentPassword">Current Password *</label>
-        <input type="password" id="currentPassword" v-model="form.currentPassword" class="border p-2 w-full rounded" required />
+      <div class="mb-4 relative">
+        <label
+          class="block mb-2 font-medium text-gray-700"
+          for="currentPassword"
+          >Current Password <span class="text-red-500">*</span></label
+        >
+        <input
+          type="password"
+          id="currentPassword"
+          v-model="form.currentPassword"
+          class="border border-gray-300 p-3 w-full rounded-md focus:ring-2 focus:ring-red-200 focus:border-red-300 transition-shadow duration-200"
+          required
+          placeholder="Enter Current Password"
+        />
       </div>
-      <div class="mb-4">
-        <label class="block mb-2 font-semibold" for="newPassword">New Password *</label>
-        <input type="password" id="newPassword" v-model="form.newPassword" class="border p-2 w-full rounded" required />
+      <div class="mb-4 relative">
+        <label class="block mb-2 font-medium text-gray-700" for="newPassword"
+          >New Password <span class="text-red-500">*</span></label
+        >
+        <input
+          type="password"
+          id="newPassword"
+          v-model="form.newPassword"
+          class="border border-gray-300 p-3 w-full rounded-md focus:ring-2 focus:ring-red-200 focus:border-red-300 transition-shadow duration-200"
+          required
+          placeholder="Enter New Password"
+        />
       </div>
-      <div class="mb-4">
-        <label class="block mb-2 font-semibold" for="confirmPassword">Confirm New Password *</label>
-        <input type="password" id="confirmPassword" v-model="form.confirmPassword" class="border p-2 w-full rounded" required />
+      <div class="mb-4 relative">
+        <label class="block mb-2 font-medium text-gray-700" for="confirmPassword"
+          >Confirm New Password <span class="text-red-500">*</span></label
+        >
+        <input
+          type="password"
+          id="confirmPassword"
+          v-model="form.confirmPassword"
+          class="border border-gray-300 p-3 w-full rounded-md focus:ring-2 focus:ring-red-200 focus:border-red-300 transition-shadow duration-200"
+          required
+          placeholder="Confirm New Password"
+        />
       </div>
-      <div v-if="errorMessage" class="mb-4 text-red-600">
+      <div v-if="errorMessage" class="mb-4 text-red-600 text-sm">
         {{ errorMessage }}
       </div>
-      <button type="submit" class="mt-6 bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 text-white py-2 px-4 rounded hover:bg-red-700 transition-colors font-bold">
+      <button
+        type="submit"
+        class="mt-6 bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 text-white py-3 font-bold px-6 rounded-md hover:bg-red-600 transition-colors duration-300 w-full"
+      >
         Reset Password
       </button>
     </form>
@@ -73,7 +111,5 @@ export default {
 </script>
 
 <style scoped>
-.reset-password-container {
-  background-color: #f7fafc;
-}
+/* No additional styles required. */
 </style>

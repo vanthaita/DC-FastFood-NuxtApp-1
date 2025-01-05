@@ -1,12 +1,14 @@
 <template>
-  <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition hover:scale-105 duration-300 ease-in-out max-w-xs">
+  <div
+    class="bg-white shadow-lg rounded-lg overflow-hidden transform transition-all duration-300 hover:scale-101 max-w-xs"
+  >
     <img :src="imageSrc" alt="Product image" class="w-full h-64 object-cover" />
     <div class="p-4">
-      <h3 class="text-xl font-semibold text-gray-800">{{ name }}</h3>
-      <p class="text-gray-600 mt-2">{{ description }}</p>
-      <p class="text-2xl font-bold text-gray-800 mt-4">{{ price }}</p>
+      <h3 class="text-xl font-semibold text-gray-800 mb-2">{{ name }}</h3>
+      <p class="text-gray-600 mt-1 leading-relaxed">{{ description }}</p>
+      <p class="text-2xl font-bold text-gray-900 mt-4">${{ price }}</p>
     </div>
-    <nuxt-link
+    <NuxtLink
       :to="{
         path: '/productDetail',
         query: {
@@ -17,10 +19,10 @@
           imageSrc: imageSrc,
         },
       }"
-      class="block text-center bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 text-white py-2 mt-4 font-medium hover:bg-red-600 transition duration-200 ease-in-out"
+      class="block text-center bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 text-white py-3 mt-4 font-medium hover:bg-red-600 transition-colors duration-200"
     >
       Buy
-    </nuxt-link>
+    </NuxtLink>
   </div>
 </template>
 
@@ -28,7 +30,7 @@
 import { defineProps } from 'vue';
 
 const props = defineProps<{
-  id: number; 
+  id: number;
   name: string;
   description: string;
   price: string;

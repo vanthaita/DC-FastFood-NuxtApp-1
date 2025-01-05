@@ -1,9 +1,14 @@
 <template>
-  <div class="recommend-list">
-    <h2 class="text-2xl text-center font-bold text-gray-500 mb-10">Recommended Products</h2>
+  <div class="recommend-list p-6 md:p-8">
+    <h2
+      class="text-2xl md:text-3xl text-center font-semibold text-gray-700 mb-8"
+    >
+      Recommended Products
+    </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       <ProductCard
         v-for="product in recommendedProducts"
+        :key="product.id"
         :id="product.id"
         :name="product.name"
         :description="product.description"
@@ -19,7 +24,7 @@ import { ref, computed } from 'vue';
 import ProductCard from './ProductCard.vue';
 import { combodata } from '../data/combodata';
 
-const allProducts = combodata.flatMap(combo => combo.products);
+const allProducts = combodata.flatMap((combo) => combo.products);
 
 const shuffleArray = (array: any[]) => {
   for (let i = array.length - 1; i > 0; i--) {

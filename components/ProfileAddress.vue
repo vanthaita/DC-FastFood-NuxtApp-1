@@ -1,47 +1,111 @@
 <template>
-  <div class=" relative address-container p-6 bg-gray-100 rounded-lg shadow-lg">
-    <h2 class="text-4xl text-center font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-400">Your Addresses</h2>
-    <div class="address-form mb-6">
+  <div
+    class="address-container w-full md:w-3/4 relative p-6 bg-white rounded-lg shadow-lg transform transition-all duration-300 hover:scale-102"
+  >
+    <h2
+      class="text-3xl md:text-4xl text-center font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-400"
+    >
+      Your Addresses
+    </h2>
+    <div class="address-form mb-8">
       <form @submit.prevent="saveAddress">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <label class="block mb-2 font-semibold" for="street">Street *</label>
-            <input type="text" id="street" v-model="form.street" class="border p-2 w-full rounded" required />
+          <div class="relative">
+            <label
+              class="block mb-2 font-medium text-gray-700"
+              for="street"
+              >Street <span class="text-red-500">*</span></label
+            >
+            <input
+              type="text"
+              id="street"
+              v-model="form.street"
+              class="border border-gray-300 p-3 w-full rounded-md focus:ring-2 focus:ring-red-200 focus:border-red-300 transition-shadow duration-200"
+              required
+              placeholder="Enter Street"
+            />
           </div>
-          <div>
-            <label class="block mb-2 font-semibold" for="city">City *</label>
-            <input type="text" id="city" v-model="form.city" class="border p-2 w-full rounded" required />
+          <div class="relative">
+            <label class="block mb-2 font-medium text-gray-700" for="city"
+              >City <span class="text-red-500">*</span></label
+            >
+            <input
+              type="text"
+              id="city"
+              v-model="form.city"
+              class="border border-gray-300 p-3 w-full rounded-md focus:ring-2 focus:ring-red-200 focus:border-red-300 transition-shadow duration-200"
+              required
+               placeholder="Enter City"
+            />
           </div>
-          <div>
-            <label class="block mb-2 font-semibold" for="state">State *</label>
-            <input type="text" id="state" v-model="form.state" class="border p-2 w-full rounded" required />
+          <div class="relative">
+            <label class="block mb-2 font-medium text-gray-700" for="state"
+              >State <span class="text-red-500">*</span></label
+            >
+            <input
+              type="text"
+              id="state"
+              v-model="form.state"
+              class="border border-gray-300 p-3 w-full rounded-md focus:ring-2 focus:ring-red-200 focus:border-red-300 transition-shadow duration-200"
+              required
+              placeholder="Enter State"
+            />
           </div>
-          <div>
-            <label class="block mb-2 font-semibold" for="zip">ZIP Code *</label>
-            <input type="text" id="zip" v-model="form.zip" class="border p-2 w-full rounded" required />
+          <div class="relative">
+            <label class="block mb-2 font-medium text-gray-700" for="zip"
+              >ZIP Code <span class="text-red-500">*</span></label
+            >
+            <input
+              type="text"
+              id="zip"
+              v-model="form.zip"
+              class="border border-gray-300 p-3 w-full rounded-md focus:ring-2 focus:ring-red-200 focus:border-red-300 transition-shadow duration-200"
+              required
+              placeholder="Enter Zip Code"
+            />
           </div>
         </div>
-        <button type="submit" class="mt-6 bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 text-white py-2 px-4 rounded hover:bg-red-700 transition-colors font-bold">
+        <button
+          type="submit"
+          class="mt-6 bg-gradient-to-r from-orange-500 via-pink-500 to-red-500 text-white py-3 px-6 rounded-md hover:bg-red-600 transition-colors duration-300 w-full"
+        >
           {{ editMode ? 'Update Address' : 'Add Address' }}
         </button>
       </form>
-      <button 
-    @click="clearData" 
-    class="absolute top-50 right-10 mt-6 bg-gray-400 text-white py-2 px-4 rounded hover:bg-gray-500 transition-colors font-bold">
-    Clear All
-  </button>
+      
     </div>
     <div class="address-list">
-      <h3 class="text-xl font-bold mb-4 text-gray-800">Saved Addresses</h3>
-      <ul>
-        <li v-for="(address, index) in addresses" :key="address.id" class="mb-4 p-4 bg-white rounded-lg shadow">
-          <p>{{ address.street }}, {{ address.city }}, {{ address.state }} {{ address.zip }}</p>
-          <div class="mt-2 flex space-x-4">
-            <button @click="editAddress(index)" class="bg-blue-600 text-white py-1 px-3 rounded hover:bg-blue-700">Edit</button>
-            <button @click="confirmDeleteAddress(address.id)" class="bg-red-600 text-white py-1 px-3 rounded hover:bg-red-700">Delete</button>
+      <h3 class="text-2xl font-semibold mb-4 text-gray-800">Saved Addresses</h3>
+      <ul class="space-y-4">
+        <li
+          v-for="(address, index) in addresses"
+          :key="address.id"
+          class="p-4 bg-gray-50 rounded-lg shadow flex items-center justify-between"
+        >
+          <div class="flex-1">
+            <p class="text-gray-700">{{ address.street }}, {{ address.city }}, {{ address.state }} {{ address.zip }}</p>
+          </div>
+          <div class="flex space-x-2">
+            <button
+              @click="editAddress(index)"
+              class="bg-blue-600 text-white py-1 px-3 rounded-md hover:bg-blue-700 transition-colors duration-200"
+            >
+              Edit
+            </button>
+            <button
+              @click="confirmDeleteAddress(address.id)"
+              class="bg-red-600 text-white py-1 px-3 rounded-md hover:bg-red-700 transition-colors duration-200"
+            >
+              Delete
+            </button>
           </div>
         </li>
       </ul>
+      <button 
+        @click="clearData" 
+        class=" mt-6 bg-gray-400 text-white py-2 px-4 rounded-md hover:bg-gray-500 transition-colors font-medium">
+        Clear All
+      </button>
     </div>
   </div>
 </template>
@@ -117,7 +181,7 @@ export default {
       };
     };
 
-    const clearData = () => {
+      const clearData = () => {
       if(addresses.value.length === 0) {
         Swal.fire({
           title: 'No address to clear',
@@ -158,20 +222,5 @@ export default {
 </script>
 
 <style scoped>
-.address-container {
-  background-color: #f7fafc;
-}
-
-.address-form form {
-  max-width: 600px;
-}
-
-.address-list ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.address-list li {
-  border: 1px solid #e2e8f0;
-}
+/* No additional styles are required here */
 </style>
