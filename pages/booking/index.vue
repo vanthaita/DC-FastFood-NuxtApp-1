@@ -2,7 +2,7 @@
   <div>
     <loading v-if="isLoading" />
     <div v-else class="mx-auto">
-      <div class="shadow-lg rounded-lg mt-6 p-2 w-full">
+      <div class="w-full">
         <bookParty />
       </div>
     </div>

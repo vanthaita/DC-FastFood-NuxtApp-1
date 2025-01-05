@@ -1,8 +1,8 @@
 <template>
   <div>
     <loading v-if="isLoading" />
-    <div v-else class="min-h-screen flex flex-col items-center justify-center">
-      <div class="bg-white mt-16 shadow-lg rounded-lg w-full h-full p-2">
+    <div v-else class="min-h-screen ">
+      <div class="">
         <findAddress />
       </div>
     </div>

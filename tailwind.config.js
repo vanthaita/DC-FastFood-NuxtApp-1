@@ -11,6 +11,13 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'custom-gradient': 'linear-gradient(135deg, #f97316 0%, #facc15 100%)',
+        'custom-radial': 'radial-gradient(circle, #f87171, #fbbf24)',
+        'gradient-blue-pink': 'linear-gradient(to right, #3b82f6, #ec4899)',
+        'gradient-orange-purple': 'linear-gradient(45deg, #f97316, #a855f7)',
+
+      },
       keyframes: {
         pulseCircle: {
           "0%, 100%": { transform: "scale(1)", opacity: "1" },
